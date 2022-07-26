@@ -1,2 +1,2 @@
 # libpdt
-Library for printing colored text
+Library for printing dyed text
