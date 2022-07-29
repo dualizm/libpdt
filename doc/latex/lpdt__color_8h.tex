@@ -1,0 +1,251 @@
+\hypertarget{lpdt__color_8h}{}\doxysection{src/lpdt\+\_\+color.h File Reference}
+\label{lpdt__color_8h}\index{src/lpdt\_color.h@{src/lpdt\_color.h}}
+
+
+The file contains information for obtaining a sequence of symbols of color, type, effect.  
+
+
+\doxysubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structlpdt__color__rgb__fg__s}{lpdt\+\_\+color\+\_\+rgb\+\_\+fg\+\_\+s}}
+\begin{DoxyCompactList}\small\item\em RGB fg color for text. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structlpdt__color__rgb__bg__s}{lpdt\+\_\+color\+\_\+rgb\+\_\+bg\+\_\+s}}
+\begin{DoxyCompactList}\small\item\em RGB bg color for text. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structlpdt__color__param__s}{lpdt\+\_\+color\+\_\+param\+\_\+s}}
+\begin{DoxyCompactList}\small\item\em Color param. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structlpdt__color__param__rgb__s}{lpdt\+\_\+color\+\_\+param\+\_\+rgb\+\_\+s}}
+\begin{DoxyCompactList}\small\item\em Rgb color param. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structlpdt__buffer__effect__s}{lpdt\+\_\+buffer\+\_\+effect\+\_\+s}}
+\item 
+struct \mbox{\hyperlink{structlpdt__buffer__code__rgb__s}{lpdt\+\_\+buffer\+\_\+code\+\_\+rgb\+\_\+s}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{lpdt__color_8h_abd46bbbef0caa8466ec305f76c4335aa}\label{lpdt__color_8h_abd46bbbef0caa8466ec305f76c4335aa}} 
+\#define {\bfseries LDPT\+\_\+\+COLOR\+\_\+\+H\+\_\+}
+\item 
+\mbox{\Hypertarget{lpdt__color_8h_adbdd023c7cc1be1d04f23daabbe8752a}\label{lpdt__color_8h_adbdd023c7cc1be1d04f23daabbe8752a}} 
+\#define \mbox{\hyperlink{lpdt__color_8h_adbdd023c7cc1be1d04f23daabbe8752a}{LPDT\+\_\+\+BUFFER\+\_\+\+EFFECT\+\_\+\+LEN}}~360
+\begin{DoxyCompactList}\small\item\em Buffer for effect seq char. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{lpdt__color_8h_a643a0357353ae3110a7eb2944a937d7a}\label{lpdt__color_8h_a643a0357353ae3110a7eb2944a937d7a}} 
+\#define \mbox{\hyperlink{lpdt__color_8h_a643a0357353ae3110a7eb2944a937d7a}{LPDT\+\_\+\+BUFFER\+\_\+\+CODE\+\_\+\+RGB\+\_\+\+LEN\+\_\+}}~20
+\begin{DoxyCompactList}\small\item\em Buffer for code rgb. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{lpdt__color_8h_a09bee71c49709edf237325befbd85b79}\label{lpdt__color_8h_a09bee71c49709edf237325befbd85b79}} 
+enum \mbox{\hyperlink{lpdt__color_8h_a09bee71c49709edf237325befbd85b79}{lpdt\+\_\+colors\+\_\+e}} \{ \newline
+{\bfseries LPDT\+\_\+\+BLACK} = 0x00
+, {\bfseries LPDT\+\_\+\+BLUE} = 0x01
+, {\bfseries LPDT\+\_\+\+GREEN} = 0x02
+, {\bfseries LPDT\+\_\+\+CYAN} = 0x03
+, \newline
+{\bfseries LPDT\+\_\+\+RED} = 0x04
+, {\bfseries LPDT\+\_\+\+MAGENTA} = 0x05
+, {\bfseries LPDT\+\_\+\+YELLOW} = 0x06
+, {\bfseries LPDT\+\_\+\+WHITE} = 0x07
+, \newline
+{\bfseries LPDT\+\_\+\+BRIGHT\+\_\+\+BLACK} = 0x08
+, {\bfseries LPDT\+\_\+\+BRIGHT\+\_\+\+BLUE} = 0x09
+, {\bfseries LPDT\+\_\+\+BRIGHT\+\_\+\+GREEN} = 0x0A
+, {\bfseries LPDT\+\_\+\+BRIGHT\+\_\+\+CYAN} = 0x0B
+, \newline
+{\bfseries LPDT\+\_\+\+BRIGHT\+\_\+\+RED} = 0x0C
+, {\bfseries LPDT\+\_\+\+BRIGHT\+\_\+\+MAGENTA} = 0x0D
+, {\bfseries LPDT\+\_\+\+BRIGHT\+\_\+\+YELLOW} = 0x0E
+, {\bfseries LPDT\+\_\+\+BRIGHT\+\_\+\+WHITE} = 0x0F
+, \newline
+{\bfseries LPDT\+\_\+\+STANDARD} = 0x10
+, {\bfseries LPDT\+\_\+\+END} = 0x\+FF
+ \}
+\begin{DoxyCompactList}\small\item\em Color encoding enumeration. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{lpdt__color_8h_ae86241648b0a03bbdd80274f33ef33fc}\label{lpdt__color_8h_ae86241648b0a03bbdd80274f33ef33fc}} 
+enum \mbox{\hyperlink{lpdt__color_8h_ae86241648b0a03bbdd80274f33ef33fc}{lpdt\+\_\+effects\+\_\+e}} \{ \newline
+{\bfseries LPDT\+\_\+\+BOLD} = 0x01
+, {\bfseries LPDT\+\_\+\+FAINT} = 0x02
+, {\bfseries LPDT\+\_\+\+ITALIC} = 0x04
+, {\bfseries LPDT\+\_\+\+UNDERLINE} = 0x08
+, \newline
+{\bfseries LPDT\+\_\+\+BLINK} = 0x10
+, {\bfseries LPDT\+\_\+\+RAPID\+\_\+\+BLINK} = 0x20
+, {\bfseries LPDT\+\_\+\+INVERSE} = 0x40
+, {\bfseries LPDT\+\_\+\+INVISIBLE} = 0x80
+, \newline
+{\bfseries LPDT\+\_\+\+OVERLINE} = 0x100
+ \}
+\begin{DoxyCompactList}\small\item\em Text effect enumeration. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{lpdt__color_8h_a6fbb08f2cb267ff11dbfafc43fd57db6}\label{lpdt__color_8h_a6fbb08f2cb267ff11dbfafc43fd57db6}} 
+enum \mbox{\hyperlink{lpdt__color_8h_a6fbb08f2cb267ff11dbfafc43fd57db6}{lpdt\+\_\+color\+\_\+type\+\_\+e}} \{ {\bfseries LPDT\+\_\+\+FG} = 0x01
+, {\bfseries LPDT\+\_\+\+BG} = 0x02
+ \}
+\begin{DoxyCompactList}\small\item\em Text type enumeration. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structlpdt__buffer__code__rgb__s}{lpdt\+\_\+buffer\+\_\+code\+\_\+rgb\+\_\+s}} $\ast$ \mbox{\hyperlink{lpdt__color_8h_a1c57121b0851f31f17d483ff0e76cbfa}{lpdt\+\_\+make\+\_\+buffer\+\_\+rgb\+\_\+code}} (void)
+\begin{DoxyCompactList}\small\item\em init buffer for rgb code \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structlpdt__buffer__effect__s}{lpdt\+\_\+buffer\+\_\+effect\+\_\+s}} $\ast$ \mbox{\hyperlink{lpdt__color_8h_a61e56e5a2217e168b3a51b4657c05fd0}{lpdt\+\_\+make\+\_\+buffer\+\_\+effect}} (enum \mbox{\hyperlink{lpdt__color_8h_ae86241648b0a03bbdd80274f33ef33fc}{lpdt\+\_\+effects\+\_\+e}} const effects)
+\begin{DoxyCompactList}\small\item\em init buffer for effects \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structlpdt__color__param__s}{lpdt\+\_\+color\+\_\+param\+\_\+s}} $\ast$ \mbox{\hyperlink{lpdt__color_8h_ab1e985f592d8c59e200413c460666ff2}{lpdt\+\_\+make\+\_\+color\+\_\+param}} (enum \mbox{\hyperlink{lpdt__color_8h_a09bee71c49709edf237325befbd85b79}{lpdt\+\_\+colors\+\_\+e}} const color\+\_\+fg, enum \mbox{\hyperlink{lpdt__color_8h_a09bee71c49709edf237325befbd85b79}{lpdt\+\_\+colors\+\_\+e}} const color\+\_\+bg)
+\begin{DoxyCompactList}\small\item\em init new param for print \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structlpdt__color__param__rgb__s}{lpdt\+\_\+color\+\_\+param\+\_\+rgb\+\_\+s}} $\ast$ \mbox{\hyperlink{lpdt__color_8h_a05a10b250ebc65f0238e19a20a6ef4d4}{lpdt\+\_\+make\+\_\+color\+\_\+param\+\_\+rgb}} (struct \mbox{\hyperlink{structlpdt__color__rgb__fg__s}{lpdt\+\_\+color\+\_\+rgb\+\_\+fg\+\_\+s}} const colorfg, struct \mbox{\hyperlink{structlpdt__color__rgb__bg__s}{lpdt\+\_\+color\+\_\+rgb\+\_\+bg\+\_\+s}} const color\+\_\+bg)
+\begin{DoxyCompactList}\small\item\em init new param for print \end{DoxyCompactList}\item 
+char const  $\ast$ \mbox{\hyperlink{lpdt__color_8h_a606ebb877e2148c1c2e1606a9049630d}{lpdt\+\_\+code\+\_\+effect}} (enum \mbox{\hyperlink{lpdt__color_8h_ae86241648b0a03bbdd80274f33ef33fc}{lpdt\+\_\+effects\+\_\+e}} const effect)
+\begin{DoxyCompactList}\small\item\em get control characters for desired effect. \end{DoxyCompactList}\item 
+char const  $\ast$ \mbox{\hyperlink{lpdt__color_8h_a4a896dafda97d6dcbacdf46d46490e34}{lpdt\+\_\+code\+\_\+color}} (enum \mbox{\hyperlink{lpdt__color_8h_a09bee71c49709edf237325befbd85b79}{lpdt\+\_\+colors\+\_\+e}} const color, enum \mbox{\hyperlink{lpdt__color_8h_a6fbb08f2cb267ff11dbfafc43fd57db6}{lpdt\+\_\+color\+\_\+type\+\_\+e}} const type)
+\begin{DoxyCompactList}\small\item\em get control characters for desired color. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{lpdt__color_8h_a425511aaa02f84787541f1c728d013b2}{lpdt\+\_\+code\+\_\+rgb}} (struct \mbox{\hyperlink{structlpdt__buffer__code__rgb__s}{lpdt\+\_\+buffer\+\_\+code\+\_\+rgb\+\_\+s}} $\ast$destination, unsigned char const r, unsigned char const g, unsigned char const b, enum \mbox{\hyperlink{lpdt__color_8h_a6fbb08f2cb267ff11dbfafc43fd57db6}{lpdt\+\_\+color\+\_\+type\+\_\+e}} const type)
+\begin{DoxyCompactList}\small\item\em get control characters for desired color. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The file contains information for obtaining a sequence of symbols of color, type, effect. 
+
+$\vert$+-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/---+$\vert$$\ast$
+
+\begin{DoxyAuthor}{Authors}
+notidman 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+26-\/07-\/22 
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+MIT License
+\end{DoxyCopyright}
+$\vert$+-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/---$\vert$ LPDT $\vert$-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/---+$\vert$$\ast$ 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{lpdt__color_8h_a4a896dafda97d6dcbacdf46d46490e34}\label{lpdt__color_8h_a4a896dafda97d6dcbacdf46d46490e34}} 
+\index{lpdt\_color.h@{lpdt\_color.h}!lpdt\_code\_color@{lpdt\_code\_color}}
+\index{lpdt\_code\_color@{lpdt\_code\_color}!lpdt\_color.h@{lpdt\_color.h}}
+\doxysubsubsection{\texorpdfstring{lpdt\_code\_color()}{lpdt\_code\_color()}}
+{\footnotesize\ttfamily char const$\ast$ lpdt\+\_\+code\+\_\+color (\begin{DoxyParamCaption}\item[{enum \mbox{\hyperlink{lpdt__color_8h_a09bee71c49709edf237325befbd85b79}{lpdt\+\_\+colors\+\_\+e}} const}]{color,  }\item[{enum \mbox{\hyperlink{lpdt__color_8h_a6fbb08f2cb267ff11dbfafc43fd57db6}{lpdt\+\_\+color\+\_\+type\+\_\+e}} const}]{type }\end{DoxyParamCaption})}
+
+
+
+get control characters for desired color. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em color} & color name \\
+\hline
+\mbox{\texttt{ in}}  & {\em type} & color type\mbox{[}fg,bg\mbox{]} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+color code 
+\end{DoxyReturn}
+\mbox{\Hypertarget{lpdt__color_8h_a606ebb877e2148c1c2e1606a9049630d}\label{lpdt__color_8h_a606ebb877e2148c1c2e1606a9049630d}} 
+\index{lpdt\_color.h@{lpdt\_color.h}!lpdt\_code\_effect@{lpdt\_code\_effect}}
+\index{lpdt\_code\_effect@{lpdt\_code\_effect}!lpdt\_color.h@{lpdt\_color.h}}
+\doxysubsubsection{\texorpdfstring{lpdt\_code\_effect()}{lpdt\_code\_effect()}}
+{\footnotesize\ttfamily char const$\ast$ lpdt\+\_\+code\+\_\+effect (\begin{DoxyParamCaption}\item[{enum \mbox{\hyperlink{lpdt__color_8h_ae86241648b0a03bbdd80274f33ef33fc}{lpdt\+\_\+effects\+\_\+e}} const}]{effect }\end{DoxyParamCaption})}
+
+
+
+get control characters for desired effect. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em effect} & effect name \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+effect code 
+\end{DoxyReturn}
+\mbox{\Hypertarget{lpdt__color_8h_a425511aaa02f84787541f1c728d013b2}\label{lpdt__color_8h_a425511aaa02f84787541f1c728d013b2}} 
+\index{lpdt\_color.h@{lpdt\_color.h}!lpdt\_code\_rgb@{lpdt\_code\_rgb}}
+\index{lpdt\_code\_rgb@{lpdt\_code\_rgb}!lpdt\_color.h@{lpdt\_color.h}}
+\doxysubsubsection{\texorpdfstring{lpdt\_code\_rgb()}{lpdt\_code\_rgb()}}
+{\footnotesize\ttfamily void lpdt\+\_\+code\+\_\+rgb (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structlpdt__buffer__code__rgb__s}{lpdt\+\_\+buffer\+\_\+code\+\_\+rgb\+\_\+s}} $\ast$}]{destination,  }\item[{unsigned char const}]{r,  }\item[{unsigned char const}]{g,  }\item[{unsigned char const}]{b,  }\item[{enum \mbox{\hyperlink{lpdt__color_8h_a6fbb08f2cb267ff11dbfafc43fd57db6}{lpdt\+\_\+color\+\_\+type\+\_\+e}} const}]{type }\end{DoxyParamCaption})}
+
+
+
+get control characters for desired color. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ out}}  & {\em destination} & pointer to the target array into which the rgb sequence of characters will be copied. \\
+\hline
+\mbox{\texttt{ in}}  & {\em r} & red color code \\
+\hline
+\mbox{\texttt{ in}}  & {\em g} & green color code \\
+\hline
+\mbox{\texttt{ in}}  & {\em b} & blue color code \\
+\hline
+\mbox{\texttt{ in}}  & {\em type} & color type\mbox{[}fg,bg\mbox{]} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+rgb color code 
+\end{DoxyReturn}
+\mbox{\Hypertarget{lpdt__color_8h_a61e56e5a2217e168b3a51b4657c05fd0}\label{lpdt__color_8h_a61e56e5a2217e168b3a51b4657c05fd0}} 
+\index{lpdt\_color.h@{lpdt\_color.h}!lpdt\_make\_buffer\_effect@{lpdt\_make\_buffer\_effect}}
+\index{lpdt\_make\_buffer\_effect@{lpdt\_make\_buffer\_effect}!lpdt\_color.h@{lpdt\_color.h}}
+\doxysubsubsection{\texorpdfstring{lpdt\_make\_buffer\_effect()}{lpdt\_make\_buffer\_effect()}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{structlpdt__buffer__effect__s}{lpdt\+\_\+buffer\+\_\+effect\+\_\+s}}$\ast$ lpdt\+\_\+make\+\_\+buffer\+\_\+effect (\begin{DoxyParamCaption}\item[{enum \mbox{\hyperlink{lpdt__color_8h_ae86241648b0a03bbdd80274f33ef33fc}{lpdt\+\_\+effects\+\_\+e}} const}]{effects }\end{DoxyParamCaption})}
+
+
+
+init buffer for effects 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em effects} & effects to buffer \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+pointer on buffer 
+\end{DoxyReturn}
+\mbox{\Hypertarget{lpdt__color_8h_a1c57121b0851f31f17d483ff0e76cbfa}\label{lpdt__color_8h_a1c57121b0851f31f17d483ff0e76cbfa}} 
+\index{lpdt\_color.h@{lpdt\_color.h}!lpdt\_make\_buffer\_rgb\_code@{lpdt\_make\_buffer\_rgb\_code}}
+\index{lpdt\_make\_buffer\_rgb\_code@{lpdt\_make\_buffer\_rgb\_code}!lpdt\_color.h@{lpdt\_color.h}}
+\doxysubsubsection{\texorpdfstring{lpdt\_make\_buffer\_rgb\_code()}{lpdt\_make\_buffer\_rgb\_code()}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{structlpdt__buffer__code__rgb__s}{lpdt\+\_\+buffer\+\_\+code\+\_\+rgb\+\_\+s}}$\ast$ lpdt\+\_\+make\+\_\+buffer\+\_\+rgb\+\_\+code (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+init buffer for rgb code 
+
+\begin{DoxyReturn}{Returns}
+pointer on buffer 
+\end{DoxyReturn}
+\mbox{\Hypertarget{lpdt__color_8h_ab1e985f592d8c59e200413c460666ff2}\label{lpdt__color_8h_ab1e985f592d8c59e200413c460666ff2}} 
+\index{lpdt\_color.h@{lpdt\_color.h}!lpdt\_make\_color\_param@{lpdt\_make\_color\_param}}
+\index{lpdt\_make\_color\_param@{lpdt\_make\_color\_param}!lpdt\_color.h@{lpdt\_color.h}}
+\doxysubsubsection{\texorpdfstring{lpdt\_make\_color\_param()}{lpdt\_make\_color\_param()}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{structlpdt__color__param__s}{lpdt\+\_\+color\+\_\+param\+\_\+s}}$\ast$ lpdt\+\_\+make\+\_\+color\+\_\+param (\begin{DoxyParamCaption}\item[{enum \mbox{\hyperlink{lpdt__color_8h_a09bee71c49709edf237325befbd85b79}{lpdt\+\_\+colors\+\_\+e}} const}]{color\+\_\+fg,  }\item[{enum \mbox{\hyperlink{lpdt__color_8h_a09bee71c49709edf237325befbd85b79}{lpdt\+\_\+colors\+\_\+e}} const}]{color\+\_\+bg }\end{DoxyParamCaption})}
+
+
+
+init new param for print 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em color\+\_\+fg} & foreground color text \\
+\hline
+\mbox{\texttt{ in}}  & {\em color\+\_\+bg} & background color text \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{lpdt__color_8h_a05a10b250ebc65f0238e19a20a6ef4d4}\label{lpdt__color_8h_a05a10b250ebc65f0238e19a20a6ef4d4}} 
+\index{lpdt\_color.h@{lpdt\_color.h}!lpdt\_make\_color\_param\_rgb@{lpdt\_make\_color\_param\_rgb}}
+\index{lpdt\_make\_color\_param\_rgb@{lpdt\_make\_color\_param\_rgb}!lpdt\_color.h@{lpdt\_color.h}}
+\doxysubsubsection{\texorpdfstring{lpdt\_make\_color\_param\_rgb()}{lpdt\_make\_color\_param\_rgb()}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{structlpdt__color__param__rgb__s}{lpdt\+\_\+color\+\_\+param\+\_\+rgb\+\_\+s}}$\ast$ lpdt\+\_\+make\+\_\+color\+\_\+param\+\_\+rgb (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structlpdt__color__rgb__fg__s}{lpdt\+\_\+color\+\_\+rgb\+\_\+fg\+\_\+s}} const}]{colorfg,  }\item[{struct \mbox{\hyperlink{structlpdt__color__rgb__bg__s}{lpdt\+\_\+color\+\_\+rgb\+\_\+bg\+\_\+s}} const}]{color\+\_\+bg }\end{DoxyParamCaption})}
+
+
+
+init new param for print 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em color\+\_\+fg} & foreground rgb color text \\
+\hline
+\mbox{\texttt{ in}}  & {\em color\+\_\+bg} & background rgb color text \\
+\hline
+\end{DoxyParams}

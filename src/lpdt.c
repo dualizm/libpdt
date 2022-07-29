@@ -2,6 +2,14 @@
 
 #include "lpdt.h"
 
+extern void lpdt_print_dyed_colors(void * msg,
+    unsigned long long size_msg,
+    struct lpdt_color_param_s const* color,
+    enum lpdt_effects_e const effects)
+{
+  struct lpdt_buffer_effect_s *buffer_effect = lpdt_make_buffer_effect(effects);
+
+}
 
 /* extern void print_dyed(colors_t const color, */
 /*     colort_t const colort, char const* msg) */ 

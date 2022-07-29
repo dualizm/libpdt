@@ -1,0 +1,182 @@
+\hypertarget{lpdt_8h}{}\doxysection{src/lpdt.h File Reference}
+\label{lpdt_8h}\index{src/lpdt.h@{src/lpdt.h}}
+
+
+library for printing dyed text  
+
+
+{\ttfamily \#include \char`\"{}lpdt\+\_\+color.\+h\char`\"{}}\newline
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{lpdt_8h_affb91692f9302b5eb1669220dd691bcd}\label{lpdt_8h_affb91692f9302b5eb1669220dd691bcd}} 
+\#define {\bfseries LPDT\+\_\+\+H\+\_\+}
+\item 
+\#define \mbox{\hyperlink{lpdt_8h_a527039a0084610654c10046dfe7fbeec}{lpdt\+\_\+print}}(MSG,  SIZE\+\_\+\+MSG,  COLOR,  EFFECTS)
+\item 
+\#define \mbox{\hyperlink{lpdt_8h_abe5743155e2737638d5eb968f3b9fcbe}{lpdt\+\_\+println}}(MSG,  SIZE\+\_\+\+MSG,  COLOR,  EFFECTS)
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{lpdt_8h_af3987c537bcd56b80ca2dfdc4267dd91}{lpdt\+\_\+print\+\_\+dyed\+\_\+colors}} (void $\ast$msg, unsigned long long size\+\_\+msg, struct \mbox{\hyperlink{structlpdt__color__param__s}{lpdt\+\_\+color\+\_\+param\+\_\+s}} const $\ast$color, enum \mbox{\hyperlink{lpdt__color_8h_ae86241648b0a03bbdd80274f33ef33fc}{lpdt\+\_\+effects\+\_\+e}} const effects)
+\item 
+void \mbox{\hyperlink{lpdt_8h_a650efe0fac33bb285d8cd86abca89100}{lpdt\+\_\+print\+\_\+dyedln\+\_\+colors}} (void $\ast$msg, unsigned long long size\+\_\+msg, struct \mbox{\hyperlink{structlpdt__color__param__s}{lpdt\+\_\+color\+\_\+param\+\_\+s}} const $\ast$color, enum \mbox{\hyperlink{lpdt__color_8h_ae86241648b0a03bbdd80274f33ef33fc}{lpdt\+\_\+effects\+\_\+e}} const effects)
+\item 
+void \mbox{\hyperlink{lpdt_8h_a4e92fb422f74a1fd1b6be75e3f059fa5}{lpdt\+\_\+print\+\_\+dyed\+\_\+rgb}} (void $\ast$msg, unsigned long long size\+\_\+msg, struct \mbox{\hyperlink{structlpdt__color__param__rgb__s}{lpdt\+\_\+color\+\_\+param\+\_\+rgb\+\_\+s}} const $\ast$color, enum \mbox{\hyperlink{lpdt__color_8h_ae86241648b0a03bbdd80274f33ef33fc}{lpdt\+\_\+effects\+\_\+e}} const effects)
+\item 
+void \mbox{\hyperlink{lpdt_8h_a0f6dc23e55284000cf421de338c58ffe}{lpdt\+\_\+print\+\_\+dyedln\+\_\+rgb}} (void $\ast$msg, unsigned long long size\+\_\+msg, struct \mbox{\hyperlink{structlpdt__color__param__rgb__s}{lpdt\+\_\+color\+\_\+param\+\_\+rgb\+\_\+s}} const $\ast$color, enum \mbox{\hyperlink{lpdt__color_8h_ae86241648b0a03bbdd80274f33ef33fc}{lpdt\+\_\+effects\+\_\+e}} const effects)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+library for printing dyed text 
+
+$\vert$+-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/---+$\vert$$\ast$
+
+\begin{DoxyAuthor}{Authors}
+notidman 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+26-\/07-\/22 
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+MIT License
+\end{DoxyCopyright}
+$\vert$+-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/---$\vert$ LPDT $\vert$-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/---+$\vert$$\ast$ 
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{lpdt_8h_a527039a0084610654c10046dfe7fbeec}\label{lpdt_8h_a527039a0084610654c10046dfe7fbeec}} 
+\index{lpdt.h@{lpdt.h}!lpdt\_print@{lpdt\_print}}
+\index{lpdt\_print@{lpdt\_print}!lpdt.h@{lpdt.h}}
+\doxysubsubsection{\texorpdfstring{lpdt\_print}{lpdt\_print}}
+{\footnotesize\ttfamily \#define lpdt\+\_\+print(\begin{DoxyParamCaption}\item[{}]{MSG,  }\item[{}]{SIZE\+\_\+\+MSG,  }\item[{}]{COLOR,  }\item[{}]{EFFECTS }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{    \_Generic((COLOR),\(\backslash\)}
+\DoxyCodeLine{    \textcolor{keyword}{struct} \mbox{\hyperlink{structlpdt__color__param__s}{lpdt\_color\_param\_s}}* : \mbox{\hyperlink{lpdt_8h_af3987c537bcd56b80ca2dfdc4267dd91}{lpdt\_print\_dyed\_colors}}(MSG, SIZE\_MSG, COLOR, EFFECTS),\(\backslash\)}
+\DoxyCodeLine{    \textcolor{keyword}{struct} \mbox{\hyperlink{structlpdt__color__param__rgb__s}{lpdt\_color\_param\_rgb\_s}}* : \mbox{\hyperlink{lpdt_8h_a4e92fb422f74a1fd1b6be75e3f059fa5}{lpdt\_print\_dyed\_rgb}}(MSG,COLOR, EFFECTS))}
+
+\end{DoxyCode}
+The function to print text to the console with certain color without line break
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em MSG} & printable text \\
+\hline
+\mbox{\texttt{ in}}  & {\em SIZE\+\_\+\+MSG} & message type size \\
+\hline
+\mbox{\texttt{ in}}  & {\em COLOR} & color struct with type,effects,color \\
+\hline
+\mbox{\texttt{ in}}  & {\em EFFECTS} & text effects \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{lpdt_8h_abe5743155e2737638d5eb968f3b9fcbe}\label{lpdt_8h_abe5743155e2737638d5eb968f3b9fcbe}} 
+\index{lpdt.h@{lpdt.h}!lpdt\_println@{lpdt\_println}}
+\index{lpdt\_println@{lpdt\_println}!lpdt.h@{lpdt.h}}
+\doxysubsubsection{\texorpdfstring{lpdt\_println}{lpdt\_println}}
+{\footnotesize\ttfamily \#define lpdt\+\_\+println(\begin{DoxyParamCaption}\item[{}]{MSG,  }\item[{}]{SIZE\+\_\+\+MSG,  }\item[{}]{COLOR,  }\item[{}]{EFFECTS }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{    \_Generic((COLOR),\(\backslash\)}
+\DoxyCodeLine{    \textcolor{keyword}{struct} \mbox{\hyperlink{structlpdt__color__param__s}{lpdt\_color\_param\_s}}* : \mbox{\hyperlink{lpdt_8h_a650efe0fac33bb285d8cd86abca89100}{lpdt\_print\_dyedln\_colors}}(MSG, SIZE\_MSG, COLOR, EFFECTS),\(\backslash\)}
+\DoxyCodeLine{    \textcolor{keyword}{struct} \mbox{\hyperlink{structlpdt__color__param__rgb__s}{lpdt\_color\_param\_rgb\_s}}* : \mbox{\hyperlink{lpdt_8h_a0f6dc23e55284000cf421de338c58ffe}{lpdt\_print\_dyedln\_rgb}}(MSG,SIZE\_MSG, COLOR, EFFECTS))}
+
+\end{DoxyCode}
+The function to print text to the console of a certain color with a line break
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em MSG} & printable text \\
+\hline
+\mbox{\texttt{ in}}  & {\em SIZE\+\_\+\+MSG} & message type size \\
+\hline
+\mbox{\texttt{ in}}  & {\em COLOR} & color struct with type,effects,color \\
+\hline
+\mbox{\texttt{ in}}  & {\em EFFECTS} & text effects \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{lpdt_8h_af3987c537bcd56b80ca2dfdc4267dd91}\label{lpdt_8h_af3987c537bcd56b80ca2dfdc4267dd91}} 
+\index{lpdt.h@{lpdt.h}!lpdt\_print\_dyed\_colors@{lpdt\_print\_dyed\_colors}}
+\index{lpdt\_print\_dyed\_colors@{lpdt\_print\_dyed\_colors}!lpdt.h@{lpdt.h}}
+\doxysubsubsection{\texorpdfstring{lpdt\_print\_dyed\_colors()}{lpdt\_print\_dyed\_colors()}}
+{\footnotesize\ttfamily void lpdt\+\_\+print\+\_\+dyed\+\_\+colors (\begin{DoxyParamCaption}\item[{void $\ast$}]{msg,  }\item[{unsigned long long}]{size\+\_\+msg,  }\item[{struct \mbox{\hyperlink{structlpdt__color__param__s}{lpdt\+\_\+color\+\_\+param\+\_\+s}} const $\ast$}]{color,  }\item[{enum \mbox{\hyperlink{lpdt__color_8h_ae86241648b0a03bbdd80274f33ef33fc}{lpdt\+\_\+effects\+\_\+e}} const}]{effects }\end{DoxyParamCaption})}
+
+The function to print text to the console with certain color without line break
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em msg} & printabel text \\
+\hline
+\mbox{\texttt{ in}}  & {\em size\+\_\+msg} & message type size \\
+\hline
+\mbox{\texttt{ in}}  & {\em color} & color text \\
+\hline
+\mbox{\texttt{ in}}  & {\em effects} & text effect \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{lpdt_8h_a4e92fb422f74a1fd1b6be75e3f059fa5}\label{lpdt_8h_a4e92fb422f74a1fd1b6be75e3f059fa5}} 
+\index{lpdt.h@{lpdt.h}!lpdt\_print\_dyed\_rgb@{lpdt\_print\_dyed\_rgb}}
+\index{lpdt\_print\_dyed\_rgb@{lpdt\_print\_dyed\_rgb}!lpdt.h@{lpdt.h}}
+\doxysubsubsection{\texorpdfstring{lpdt\_print\_dyed\_rgb()}{lpdt\_print\_dyed\_rgb()}}
+{\footnotesize\ttfamily void lpdt\+\_\+print\+\_\+dyed\+\_\+rgb (\begin{DoxyParamCaption}\item[{void $\ast$}]{msg,  }\item[{unsigned long long}]{size\+\_\+msg,  }\item[{struct \mbox{\hyperlink{structlpdt__color__param__rgb__s}{lpdt\+\_\+color\+\_\+param\+\_\+rgb\+\_\+s}} const $\ast$}]{color,  }\item[{enum \mbox{\hyperlink{lpdt__color_8h_ae86241648b0a03bbdd80274f33ef33fc}{lpdt\+\_\+effects\+\_\+e}} const}]{effects }\end{DoxyParamCaption})}
+
+The function to print text to the console with rgb colors without line break
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em msg} & printabel text \\
+\hline
+\mbox{\texttt{ in}}  & {\em size\+\_\+msg} & message type size \\
+\hline
+\mbox{\texttt{ in}}  & {\em color} & color text \\
+\hline
+\mbox{\texttt{ in}}  & {\em effects} & text effect \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{lpdt_8h_a650efe0fac33bb285d8cd86abca89100}\label{lpdt_8h_a650efe0fac33bb285d8cd86abca89100}} 
+\index{lpdt.h@{lpdt.h}!lpdt\_print\_dyedln\_colors@{lpdt\_print\_dyedln\_colors}}
+\index{lpdt\_print\_dyedln\_colors@{lpdt\_print\_dyedln\_colors}!lpdt.h@{lpdt.h}}
+\doxysubsubsection{\texorpdfstring{lpdt\_print\_dyedln\_colors()}{lpdt\_print\_dyedln\_colors()}}
+{\footnotesize\ttfamily void lpdt\+\_\+print\+\_\+dyedln\+\_\+colors (\begin{DoxyParamCaption}\item[{void $\ast$}]{msg,  }\item[{unsigned long long}]{size\+\_\+msg,  }\item[{struct \mbox{\hyperlink{structlpdt__color__param__s}{lpdt\+\_\+color\+\_\+param\+\_\+s}} const $\ast$}]{color,  }\item[{enum \mbox{\hyperlink{lpdt__color_8h_ae86241648b0a03bbdd80274f33ef33fc}{lpdt\+\_\+effects\+\_\+e}} const}]{effects }\end{DoxyParamCaption})}
+
+The function to print text to the console of a certain color with a line break
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em msg} & printabel text \\
+\hline
+\mbox{\texttt{ in}}  & {\em size\+\_\+msg} & message type size \\
+\hline
+\mbox{\texttt{ in}}  & {\em color} & color text \\
+\hline
+\mbox{\texttt{ in}}  & {\em effects} & text effect \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{lpdt_8h_a0f6dc23e55284000cf421de338c58ffe}\label{lpdt_8h_a0f6dc23e55284000cf421de338c58ffe}} 
+\index{lpdt.h@{lpdt.h}!lpdt\_print\_dyedln\_rgb@{lpdt\_print\_dyedln\_rgb}}
+\index{lpdt\_print\_dyedln\_rgb@{lpdt\_print\_dyedln\_rgb}!lpdt.h@{lpdt.h}}
+\doxysubsubsection{\texorpdfstring{lpdt\_print\_dyedln\_rgb()}{lpdt\_print\_dyedln\_rgb()}}
+{\footnotesize\ttfamily void lpdt\+\_\+print\+\_\+dyedln\+\_\+rgb (\begin{DoxyParamCaption}\item[{void $\ast$}]{msg,  }\item[{unsigned long long}]{size\+\_\+msg,  }\item[{struct \mbox{\hyperlink{structlpdt__color__param__rgb__s}{lpdt\+\_\+color\+\_\+param\+\_\+rgb\+\_\+s}} const $\ast$}]{color,  }\item[{enum \mbox{\hyperlink{lpdt__color_8h_ae86241648b0a03bbdd80274f33ef33fc}{lpdt\+\_\+effects\+\_\+e}} const}]{effects }\end{DoxyParamCaption})}
+
+The function to print text to the console with rgb colors with a line break
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em msg} & printabel text \\
+\hline
+\mbox{\texttt{ in}}  & {\em size\+\_\+msg} & message type size \\
+\hline
+\mbox{\texttt{ in}}  & {\em color} & color text \\
+\hline
+\mbox{\texttt{ in}}  & {\em effects} & text effect \\
+\hline
+\end{DoxyParams}

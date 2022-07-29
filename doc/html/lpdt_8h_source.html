@@ -20,7 +20,7 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
-  <td id="projectlogo"><img alt="Logo" src="lpdt_ico.svg"/></td>
+  <td id="projectlogo"><img alt="Logo" src="lpdt_ico.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">libpdt
    &#160;<span id="projectnumber">1.0</span>
@@ -72,42 +72,52 @@ $(function() {
 <div class="title">lpdt.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#pragma once</span></div>
+<a href="lpdt_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#pragma once</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#ifndef LPDT_H_</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#define LPDT_H_</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;lpdt_color.h&quot;</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="lpdt__color_8h.html">lpdt_color.h</a>&quot;</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#define clrprint(MSG, COLOR) _Generic((COLOR),\</span></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">    struct lpdt_color_s* : print_dyed_name(MSG,COLOR),\</span></div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">    struct lpdt_color_rgb_s* : print_dyed_rgb(MSG,COLOR))</span></div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#define clrprintln(MSG, COLOR) _Generic((COLOR),\</span></div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">    struct lpdt_color_s* : print_dyedln_name(MSG,COLOR),\</span></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">    struct lpdt_color_rgb_s* : print_dyedln_rgb(MSG,COLOR))</span></div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">void</span> print_dyed_name(<span class="keywordtype">char</span> <span class="keyword">const</span>* msg,</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keyword">struct</span> <a class="code" href="structlpdt__color__s.html">lpdt_color_s</a> <span class="keyword">const</span>* color); </div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">void</span> print_dyedln_name(<span class="keywordtype">char</span> <span class="keyword">const</span>* msg,</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keyword">struct</span> <a class="code" href="structlpdt__color__s.html">lpdt_color_s</a> <span class="keyword">const</span>* color); </div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">void</span> print_dyed_rgb(<span class="keywordtype">char</span> <span class="keyword">const</span>* msg,</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="keyword">struct</span> <a class="code" href="structlpdt__color__rgb__s.html">lpdt_color_rgb_s</a> <span class="keyword">const</span>* color); </div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">void</span> print_dyedln_rgb(<span class="keywordtype">char</span> <span class="keyword">const</span>* msg,</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="keyword">struct</span> <a class="code" href="structlpdt__color__rgb__s.html">lpdt_color_rgb_s</a> <span class="keyword">const</span>* color); </div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="comment">/* extern void get_colorstr(char *str, colors_t color, const char *msg); */</span></div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="comment">/* extern void prcolorch(colors_t color, const char ch); */</span> </div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="comment">/* extern void prcolorchln(colors_t color, const char ch); */</span> </div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="comment">/* extern void get_colorstrch(char *str, colors_t color, const char ch); */</span></div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* LPDT_H_ */</span><span class="preprocessor"></span></div>
-<div class="ttc" id="astructlpdt__color__rgb__s_html"><div class="ttname"><a href="structlpdt__color__rgb__s.html">lpdt_color_rgb_s</a></div><div class="ttdoc">RGB Color for text.</div><div class="ttdef"><b>Definition:</b> lpdt_color.h:86</div></div>
-<div class="ttc" id="astructlpdt__color__s_html"><div class="ttname"><a href="structlpdt__color__s.html">lpdt_color_s</a></div><div class="ttdoc">Color for text.</div><div class="ttdef"><b>Definition:</b> lpdt_color.h:79</div></div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="lpdt_8h.html#a527039a0084610654c10046dfe7fbeec">   28</a></span>&#160;<span class="preprocessor">#define lpdt_print(MSG, SIZE_MSG, COLOR, EFFECTS) _Generic((COLOR),\</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">    struct lpdt_color_param_s* : lpdt_print_dyed_colors(MSG, SIZE_MSG, COLOR, EFFECTS),\</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">    struct lpdt_color_param_rgb_s* : lpdt_print_dyed_rgb(MSG,COLOR, EFFECTS))</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
+<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="lpdt_8h.html#abe5743155e2737638d5eb968f3b9fcbe">   41</a></span>&#160;<span class="preprocessor">#define lpdt_println(MSG, SIZE_MSG, COLOR, EFFECTS) _Generic((COLOR),\</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="preprocessor">    struct lpdt_color_param_s* : lpdt_print_dyedln_colors(MSG, SIZE_MSG, COLOR, EFFECTS),\</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="preprocessor">    struct lpdt_color_param_rgb_s* : lpdt_print_dyedln_rgb(MSG,SIZE_MSG, COLOR, EFFECTS))</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="lpdt_8h.html#af3987c537bcd56b80ca2dfdc4267dd91">lpdt_print_dyed_colors</a>(<span class="keywordtype">void</span> * msg,</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> <span class="keywordtype">long</span> size_msg,</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="keyword">struct</span> <a class="code" href="structlpdt__color__param__s.html">lpdt_color_param_s</a> <span class="keyword">const</span>* color,</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="keyword">enum</span> <a class="code" href="lpdt__color_8h.html#ae86241648b0a03bbdd80274f33ef33fc">lpdt_effects_e</a> <span class="keyword">const</span> effects); </div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
+<div class="line"><a name="l00068"></a><span class="lineno"><a class="line" href="lpdt_8h.html#a650efe0fac33bb285d8cd86abca89100">   68</a></span>&#160;<span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="lpdt_8h.html#a650efe0fac33bb285d8cd86abca89100">lpdt_print_dyedln_colors</a>(<span class="keywordtype">void</span> * msg,</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> <span class="keywordtype">long</span> size_msg,</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="keyword">struct</span> <a class="code" href="structlpdt__color__param__s.html">lpdt_color_param_s</a> <span class="keyword">const</span>* color,</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="keyword">enum</span> <a class="code" href="lpdt__color_8h.html#ae86241648b0a03bbdd80274f33ef33fc">lpdt_effects_e</a> <span class="keyword">const</span> effects); </div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
+<div class="line"><a name="l00082"></a><span class="lineno"><a class="line" href="lpdt_8h.html#a4e92fb422f74a1fd1b6be75e3f059fa5">   82</a></span>&#160;<span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="lpdt_8h.html#a4e92fb422f74a1fd1b6be75e3f059fa5">lpdt_print_dyed_rgb</a>(<span class="keywordtype">void</span> * msg,</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> <span class="keywordtype">long</span> size_msg,</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <span class="keyword">struct</span> <a class="code" href="structlpdt__color__param__rgb__s.html">lpdt_color_param_rgb_s</a> <span class="keyword">const</span>* color,</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <span class="keyword">enum</span> <a class="code" href="lpdt__color_8h.html#ae86241648b0a03bbdd80274f33ef33fc">lpdt_effects_e</a> <span class="keyword">const</span> effects); </div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160; </div>
+<div class="line"><a name="l00096"></a><span class="lineno"><a class="line" href="lpdt_8h.html#a0f6dc23e55284000cf421de338c58ffe">   96</a></span>&#160;<span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="lpdt_8h.html#a0f6dc23e55284000cf421de338c58ffe">lpdt_print_dyedln_rgb</a>(<span class="keywordtype">void</span> * msg,</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> <span class="keywordtype">long</span> size_msg,</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    <span class="keyword">struct</span> <a class="code" href="structlpdt__color__param__rgb__s.html">lpdt_color_param_rgb_s</a> <span class="keyword">const</span>* color,</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    <span class="keyword">enum</span> <a class="code" href="lpdt__color_8h.html#ae86241648b0a03bbdd80274f33ef33fc">lpdt_effects_e</a> <span class="keyword">const</span> effects); </div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160; </div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;<span class="comment">/* extern void colorstr(char *str, colors_t color, const char *msg); */</span></div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160; </div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;<span class="comment">/* extern void get_colorstrch(char *str, colors_t color, const char ch); */</span></div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160; </div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* LPDT_H_ */</span><span class="preprocessor"></span></div>
+<div class="ttc" id="alpdt_8h_html_a0f6dc23e55284000cf421de338c58ffe"><div class="ttname"><a href="lpdt_8h.html#a0f6dc23e55284000cf421de338c58ffe">lpdt_print_dyedln_rgb</a></div><div class="ttdeci">void lpdt_print_dyedln_rgb(void *msg, unsigned long long size_msg, struct lpdt_color_param_rgb_s const *color, enum lpdt_effects_e const effects)</div></div>
+<div class="ttc" id="alpdt_8h_html_a4e92fb422f74a1fd1b6be75e3f059fa5"><div class="ttname"><a href="lpdt_8h.html#a4e92fb422f74a1fd1b6be75e3f059fa5">lpdt_print_dyed_rgb</a></div><div class="ttdeci">void lpdt_print_dyed_rgb(void *msg, unsigned long long size_msg, struct lpdt_color_param_rgb_s const *color, enum lpdt_effects_e const effects)</div></div>
+<div class="ttc" id="alpdt_8h_html_a650efe0fac33bb285d8cd86abca89100"><div class="ttname"><a href="lpdt_8h.html#a650efe0fac33bb285d8cd86abca89100">lpdt_print_dyedln_colors</a></div><div class="ttdeci">void lpdt_print_dyedln_colors(void *msg, unsigned long long size_msg, struct lpdt_color_param_s const *color, enum lpdt_effects_e const effects)</div></div>
+<div class="ttc" id="alpdt_8h_html_af3987c537bcd56b80ca2dfdc4267dd91"><div class="ttname"><a href="lpdt_8h.html#af3987c537bcd56b80ca2dfdc4267dd91">lpdt_print_dyed_colors</a></div><div class="ttdeci">void lpdt_print_dyed_colors(void *msg, unsigned long long size_msg, struct lpdt_color_param_s const *color, enum lpdt_effects_e const effects)</div><div class="ttdef"><b>Definition:</b> lpdt.c:5</div></div>
+<div class="ttc" id="alpdt__color_8h_html"><div class="ttname"><a href="lpdt__color_8h.html">lpdt_color.h</a></div><div class="ttdoc">The file contains information for obtaining a sequence of symbols of color, type, effect.</div></div>
+<div class="ttc" id="alpdt__color_8h_html_ae86241648b0a03bbdd80274f33ef33fc"><div class="ttname"><a href="lpdt__color_8h.html#ae86241648b0a03bbdd80274f33ef33fc">lpdt_effects_e</a></div><div class="ttdeci">lpdt_effects_e</div><div class="ttdoc">Text effect enumeration.</div><div class="ttdef"><b>Definition:</b> lpdt_color.h:44</div></div>
+<div class="ttc" id="astructlpdt__color__param__rgb__s_html"><div class="ttname"><a href="structlpdt__color__param__rgb__s.html">lpdt_color_param_rgb_s</a></div><div class="ttdoc">Rgb color param.</div><div class="ttdef"><b>Definition:</b> lpdt_color.h:84</div></div>
+<div class="ttc" id="astructlpdt__color__param__s_html"><div class="ttname"><a href="structlpdt__color__param__s.html">lpdt_color_param_s</a></div><div class="ttdoc">Color param.</div><div class="ttdef"><b>Definition:</b> lpdt_color.h:77</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
