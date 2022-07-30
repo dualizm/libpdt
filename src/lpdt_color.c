@@ -3,96 +3,99 @@
 #include <stdlib.h>
 #include <string.h>
 
-extern char const* lpdt_color_code(enum lpdt_colors_e const color,
+char const* lpdt_code_color(enum lpdt_colors_e const color,
     enum lpdt_color_type_e const type) 
 {
+  char const* code = NULL;
   if ( type == LPDT_FG)
   {
     switch(color)
     {
-      case LPDT_COLOR_BLACK:          return "\033[0;30m"  ; break;
-      case LPDT_COLOR_RED:            return "\033[0;31m"  ; break;
-      case LPDT_COLOR_GREEN:          return "\033[0;32m"  ; break;
-      case LPDT_COLOR_YELLOW:         return "\033[0;33m"  ; break;
-      case LPDT_COLOR_BLUE:           return "\033[0;34m"  ; break;
-      case LPDT_COLOR_MAGENTA:        return "\033[0;35m"  ; break;
-      case LPDT_COLOR_CYAN:           return "\033[0;36m"  ; break;
-      case LPDT_COLOR_WHITE:          return "\033[0;37m"  ; break;
-      case LPDT_COLOR_STANDARD:       return "\033[0;39m"  ; break;
-      case LPDT_COLOR_BRIGHT_BLACK:   return "\033[0;90m"  ; break;
-      case LPDT_COLOR_BRIGHT_RED:     return "\033[0;91m"  ; break;
-      case LPDT_COLOR_BRIGHT_GREEN:   return "\033[0;92m"  ; break;
-      case LPDT_COLOR_BRIGHT_YELLOW:  return "\033[0;93m"  ; break;
-      case LPDT_COLOR_BRIGHT_BLUE:    return "\033[0;94m"  ; break;
-      case LPDT_COLOR_BRIGHT_MAGENTA: return "\033[0;95m"  ; break;
-      case LPDT_COLOR_BRIGHT_CYAN:    return "\033[0;96m"  ; break;
-      case LPDT_COLOR_BRIGHT_WHITE:   return "\033[0;97m"  ; break;
-      case LPDT_COLOR_END:            return "\033[0m"     ; break;
+      case LPDT_COLOR_BLACK:          code = "\033[0;30m"  ; break;
+      case LPDT_COLOR_RED:            code = "\033[0;31m"  ; break;
+      case LPDT_COLOR_GREEN:          code = "\033[0;32m"  ; break;
+      case LPDT_COLOR_YELLOW:         code = "\033[0;33m"  ; break;
+      case LPDT_COLOR_BLUE:           code = "\033[0;34m"  ; break;
+      case LPDT_COLOR_MAGENTA:        code = "\033[0;35m"  ; break;
+      case LPDT_COLOR_CYAN:           code = "\033[0;36m"  ; break;
+      case LPDT_COLOR_WHITE:          code = "\033[0;37m"  ; break;
+      case LPDT_COLOR_STANDARD:       code = "\033[0;39m"  ; break;
+      case LPDT_COLOR_BRIGHT_BLACK:   code = "\033[0;90m"  ; break;
+      case LPDT_COLOR_BRIGHT_RED:     code = "\033[0;91m"  ; break;
+      case LPDT_COLOR_BRIGHT_GREEN:   code = "\033[0;92m"  ; break;
+      case LPDT_COLOR_BRIGHT_YELLOW:  code = "\033[0;93m"  ; break;
+      case LPDT_COLOR_BRIGHT_BLUE:    code = "\033[0;94m"  ; break;
+      case LPDT_COLOR_BRIGHT_MAGENTA: code = "\033[0;95m"  ; break;
+      case LPDT_COLOR_BRIGHT_CYAN:    code = "\033[0;96m"  ; break;
+      case LPDT_COLOR_BRIGHT_WHITE:   code = "\033[0;97m"  ; break;
     }
   }
   else if ( type == LPDT_BG)
   {
     switch(color)
     {
-      case LPDT_COLOR_BLACK:          return "\033[0;40m"  ; break;
-      case LPDT_COLOR_RED:            return "\033[0;41m"  ; break;
-      case LPDT_COLOR_GREEN:          return "\033[0;42m"  ; break;
-      case LPDT_COLOR_YELLOW:         return "\033[0;43m"  ; break;
-      case LPDT_COLOR_BLUE:           return "\033[0;44m"  ; break;
-      case LPDT_COLOR_MAGENTA:        return "\033[0;45m"  ; break;
-      case LPDT_COLOR_CYAN:           return "\033[0;46m"  ; break;
-      case LPDT_COLOR_WHITE:          return "\033[0;47m"  ; break;
-      case LPDT_COLOR_STANDARD:       return "\033[0;49m"  ; break;
-      case LPDT_COLOR_BRIGHT_BLACK:   return "\033[0;100m" ; break;
-      case LPDT_COLOR_BRIGHT_RED:     return "\033[0;101m" ; break;
-      case LPDT_COLOR_BRIGHT_GREEN:   return "\033[0;102m" ; break;
-      case LPDT_COLOR_BRIGHT_YELLOW:  return "\033[0;103m" ; break;
-      case LPDT_COLOR_BRIGHT_BLUE:    return "\033[0;104m" ; break;
-      case LPDT_COLOR_BRIGHT_MAGENTA: return "\033[0;105m" ; break;
-      case LPDT_COLOR_BRIGHT_CYAN:    return "\033[0;106m" ; break;
-      case LPDT_COLOR_BRIGHT_WHITE:   return "\033[0;107m" ; break;
-      case LPDT_COLOR_END:            return "\033[0m"     ; break;
+      case LPDT_COLOR_BLACK:          code = "\033[0;40m"  ; break;
+      case LPDT_COLOR_RED:            code = "\033[0;41m"  ; break;
+      case LPDT_COLOR_GREEN:          code = "\033[0;42m"  ; break;
+      case LPDT_COLOR_YELLOW:         code = "\033[0;43m"  ; break;
+      case LPDT_COLOR_BLUE:           code = "\033[0;44m"  ; break;
+      case LPDT_COLOR_MAGENTA:        code = "\033[0;45m"  ; break;
+      case LPDT_COLOR_CYAN:           code = "\033[0;46m"  ; break;
+      case LPDT_COLOR_WHITE:          code = "\033[0;47m"  ; break;
+      case LPDT_COLOR_STANDARD:       code = "\033[0;49m"  ; break;
+      case LPDT_COLOR_BRIGHT_BLACK:   code = "\033[0;100m" ; break;
+      case LPDT_COLOR_BRIGHT_RED:     code = "\033[0;101m" ; break;
+      case LPDT_COLOR_BRIGHT_GREEN:   code = "\033[0;102m" ; break;
+      case LPDT_COLOR_BRIGHT_YELLOW:  code = "\033[0;103m" ; break;
+      case LPDT_COLOR_BRIGHT_BLUE:    code = "\033[0;104m" ; break;
+      case LPDT_COLOR_BRIGHT_MAGENTA: code = "\033[0;105m" ; break;
+      case LPDT_COLOR_BRIGHT_CYAN:    code = "\033[0;106m" ; break;
+      case LPDT_COLOR_BRIGHT_WHITE:   code = "\033[0;107m" ; break;
     }
   }
-  else 
-  {
-    return "\033[0m";
-  }
+
+  return code;
 }
 
-extern void lpdt_code_rgb(struct lpdt_buffer_code_rgb_s * destination,
+void lpdt_code_rgb(char destination[static MAX_BUFFER_CODE_RGB_],
     unsigned char const r, unsigned char const g, unsigned char const b,
     enum lpdt_color_type_e const type)
 {
   if ( type == LPDT_FG)
   {
-    snprintf(destination->data, LPDT_BUFFER_CODE_RGB_LEN_,
+    snprintf(destination, MAX_BUFFER_CODE_RGB_,
         "\033[38;2;%d;%d;%dm", r, g, b);
   }
   else if ( type == LPDT_BG)
   {
-    snprintf(destination->data, LPDT_BUFFER_CODE_RGB_LEN_,
+    snprintf(destination, MAX_BUFFER_CODE_RGB_,
         "\033[48;2;%d;%d;%dm", r, g, b);
   }
 }
 
-extern char const* lpdt_code_effect(enum lpdt_effects_e const effect) 
+char const* lpdt_code_effect(enum lpdt_effects_e const effect) 
 {
+  char const* code = NULL;
   switch (effect)
   {
-    case LPDT_EFFECT_BOLD:        return "\033[1m"; break;
-    case LPDT_EFFECT_FAINT:       return "\033[2m"; break;
-    case LPDT_EFFECT_ITALIC:      return "\033[3m"; break;
-    case LPDT_EFFECT_UNDERLINE:   return "\033[4m"; break;
-    case LPDT_EFFECT_BLINK:       return "\033[5m"; break;
-    case LPDT_EFFECT_RAPID_BLINK: return "\033[5m"; break;
-    case LPDT_EFFECT_INVERSE:     return "\033[7m"; break;
-    case LPDT_EFFECT_INVISIBLE:   return "\033[8m"; break;
-    case LPDT_EFFECT_OVERLINE:    return "\033[9m"; break;
-    default:                 return "error"  ; break;
+    case LPDT_EFFECT_BOLD:        code = "\033[1m"; break;
+    case LPDT_EFFECT_FAINT:       code = "\033[2m"; break;
+    case LPDT_EFFECT_ITALIC:      code = "\033[3m"; break;
+    case LPDT_EFFECT_UNDERLINE:   code = "\033[4m"; break;
+    case LPDT_EFFECT_BLINK:       code = "\033[5m"; break;
+    case LPDT_EFFECT_RAPID_BLINK: code = "\033[5m"; break;
+    case LPDT_EFFECT_INVERSE:     code = "\033[7m"; break;
+    case LPDT_EFFECT_INVISIBLE:   code = "\033[8m"; break;
+    case LPDT_EFFECT_OVERLINE:    code = "\033[9m"; break;
   }
+
+  return code;
 }
 
+char const* lpdt_code_end(void)
+{
+  return "\033[0m";
+}
 /* extern struct lpdt_color_rgb_fg_s* init_color_rgb_fg(unsigned char const r, */
 /*     unsigned char const g, unsigned cha const b) */
 /* { */
@@ -118,63 +121,80 @@ extern char const* lpdt_code_effect(enum lpdt_effects_e const effect)
 /* } */
 
 //---------------------------------------MAKE_COLOR_PARAM----------------------------------------------
-static struct lpdt_color_param_s* lpdt_make_color_param_base(enum lpdt_colors_e const color_fg,
-    enum lpdt_colors_e const color_bg)
+struct lpdt_color_fgbg_s* lpdt_make_color_fgbg_base(enum lpdt_colors_e const* color_fg,
+    enum lpdt_colors_e const* color_bg)
 {
-  struct lpdt_color_param_s * new_param = malloc(sizeof(*new_param));
-  new_param->fg = color_fg;
-  new_param->bg = color_bg;
+  struct lpdt_color_fgbg_s * new_param = malloc(sizeof(*new_param));
+  if ( color_fg != NULL)
+  {
+    new_param->fg = malloc(sizeof(*(new_param->fg)));
+    *new_param->fg = *color_fg;
+  }
+  else
+  {
+    new_param->fg = NULL;
+  }
+
+  if ( color_bg != NULL)
+  {
+    new_param->bg = malloc(sizeof(*(new_param->bg)));
+    *new_param->bg = *color_bg;
+  }
+  else
+  {
+    new_param->bg = NULL;
+  }
+
   return new_param;
 }
 
-struct lpdt_make_color_param_args
+struct lpdt_color_fgbg_s* lpdt_make_color_fgbg_wrap(struct lpdt_make_color_fgbg_args args)
 {
-  enum lpdt_colors_e const color_fg;
-  enum lpdt_colors_e const color_bg;
-};
-
-static struct lpdt_color_param_s* lpdt_make_color_param_wrap(struct lpdt_make_color_param_args const args)
-{
-  enum lpdt_colors_e const color_fg = args.color_fg ? args.color_fg : LPDT_COLOR_END;
-  enum lpdt_colors_e const color_bg = args.color_bg ? args.color_bg : LPDT_COLOR_END;
-  return lpdt_make_color_param_base(color_fg, color_bg);
+  enum lpdt_colors_e const* color_fg = args.color_fg ? &args.color_fg : NULL;
+  enum lpdt_colors_e const* color_bg = args.color_bg ? &args.color_bg : NULL;
+  return lpdt_make_color_fgbg_base(color_fg, color_bg);
 }
 //---------------------------------------MAKE_COLOR_PARAM----------------------------------------------
 
 //---------------------------------------MAKE_COLOR_PARAM_RGB------------------------------------------
-static struct lpdt_color_param_rgb_s* lpdt_make_color_param_rgb_base(struct lpdt_color_rgb_fg_s * color_fg,
+struct lpdt_color_fgbg_rgb_s* lpdt_make_color_fgbg_rgb_base(struct lpdt_color_rgb_fg_s * color_fg,
     struct lpdt_color_rgb_bg_s * color_bg)
 {
-  struct lpdt_color_param_rgb_s * new_param = malloc(sizeof(*new_param));
-  new_param->fg = color_fg;
-  new_param->bg = color_bg;
+  struct lpdt_color_fgbg_rgb_s * new_param = malloc(sizeof(*new_param));
+  if ( color_fg != NULL)
+  {
+    new_param->fg = color_fg;
+  }
+  else
+  {
+    new_param->fg = NULL;
+  }
+
+  if ( color_bg != NULL)
+  {
+    new_param->bg = color_bg;
+  }
+  else
+  {
+    new_param->bg = NULL;
+  }
+  
   return new_param;
 }
 
-struct lpdt_make_color_param_rgb_args
-{
-  struct lpdt_color_rgb_fg_s* color_fg;
-  struct lpdt_color_rgb_bg_s* color_bg;
-};
-
-static struct lpdt_color_param_rgb_s* lpdt_make_color_param_rgb_wrap(struct lpdt_make_color_param_rgb_args args)
+struct lpdt_color_fgbg_rgb_s* lpdt_make_color_fgbg_rgb_wrap(struct lpdt_make_color_fgbg_rgb_args args)
 {
   struct lpdt_color_rgb_fg_s * color_fg = args.color_fg ? args.color_fg : NULL;
   struct lpdt_color_rgb_bg_s * color_bg = args.color_bg ? args.color_bg : NULL;
-  return lpdt_make_color_param_rgb_base(color_fg, color_bg);
+  return lpdt_make_color_fgbg_rgb_base(color_fg, color_bg);
 }
 
 //---------------------------------------MAKE_COLOR_PARAM_RGB------------------------------------------
 
-extern struct lpdt_buffer_code_rgb_s* lpdt_make_buffer_rgb_code(void)
-{
-  struct lpdt_buffer_code_rgb_s * new_buffer = malloc(sizeof(*new_buffer));
-  return new_buffer;
-}
-
-extern struct lpdt_buffer_effect_s* lpdt_make_buffer_effect(enum lpdt_effects_e const effects)
+struct lpdt_buffer_effect_s* lpdt_make_buffer_effect(enum lpdt_effects_e const effects)
 {
   struct lpdt_buffer_effect_s * new_buffer = malloc(sizeof(*new_buffer));
+  memset(new_buffer->data, '\0', LPDT_BUFFER_EFFECT_LEN);
 
   for(size_t i = LPDT_EFFECT_BOLD; i < LPDT_EFFECT_OVERLINE; i <<= 1)
   {
@@ -182,4 +202,23 @@ extern struct lpdt_buffer_effect_s* lpdt_make_buffer_effect(enum lpdt_effects_e 
       strcpy(new_buffer->data, lpdt_code_effect(i));
   }
   return new_buffer;
+}
+
+
+struct lpdt_color_rgb_bg_s* lpdt_make_color_bg(unsigned char r, unsigned char g, unsigned char b)
+{
+  struct lpdt_color_rgb_bg_s * bg = malloc(sizeof(*bg));
+  bg->r = r;
+  bg->g = g;
+  bg->b = b;
+  return bg;
+}
+
+struct lpdt_color_rgb_fg_s* lpdt_make_color_fg(unsigned char r, unsigned char g, unsigned char b)
+{
+  struct lpdt_color_rgb_fg_s * fg = malloc(sizeof(*fg));
+  fg->r = r;
+  fg->g = g;
+  fg->b = b;
+  return fg;
 }

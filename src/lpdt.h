@@ -21,41 +21,37 @@
  * certain color without line break
  *
  * @param[in] MSG printable text
- * @param[in] SIZE_MSG message type size
  * @param[in] COLOR color struct with type,effects,color
  * @param[in] EFFECTS text effects
  */
-#define lpdt_print(MSG, SIZE_TYPE_MSG, COLOR, EFFECTS) _Generic((COLOR),\
-    struct lpdt_color_param_s* : lpdt_print_dyed_colors,\
-    struct lpdt_color_param_rgb_s* : lpdt_print_dyed_rgb)\
-    (MSG, SIZE_TYPE_MSG, COLOR, EFFECTS)
+#define lpdt_print(MSG, COLOR, EFFECTS) _Generic((COLOR),\
+    struct lpdt_color_fgbg_s*     : lpdt_print_dyed_colors,\
+    struct lpdt_color_fgbg_rgb_s* : lpdt_print_dyed_rgb)\
+    (MSG, COLOR, EFFECTS)
 
 /*!
  * The function to print text to the console 
  * of a certain color with a line break
  *
  * @param[in] MSG printable text
- * @param[in] SIZE_MSG message type size
  * @param[in] COLOR color struct with type,effects,color
  * @param[in] EFFECTS text effects
  */
-#define lpdt_println(MSG, SIZE_TYPE_MSG, COLOR, EFFECTS) _Generic((COLOR),\
-    struct lpdt_color_param_s* : lpdt_print_dyedln_colors,\
-    struct lpdt_color_param_rgb_s* : lpdt_print_dyedln_rgb)\
-    (MSG, SIZE_TYPE_MSG, COLOR, EFFECTS)
+#define lpdt_println(MSG, COLOR, EFFECTS) _Generic((COLOR),\
+    struct lpdt_color_fgbg_s*     : lpdt_print_dyedln_colors,\
+    struct lpdt_color_fgbg_rgb_s* : lpdt_print_dyedln_rgb)\
+    (MSG, COLOR, EFFECTS)
 
 /*!
  * The function to print text to the console with 
  * certain color without line break
  *
  * @param[in] msg printabel text
- * @param[in] size_type_msg message type size
  * @param[in] color color text
  * @param[in] effects text effects
  */
-extern void lpdt_print_dyed_colors(void * msg,
-    unsigned long long size_type_msg,
-    struct lpdt_color_param_s const* color,
+extern void lpdt_print_dyed_colors(char const* msg,
+    struct lpdt_color_fgbg_s* color,
     enum lpdt_effects_e const effects); 
 
 /*!
@@ -63,13 +59,11 @@ extern void lpdt_print_dyed_colors(void * msg,
  * of a certain color with a line break
  *
  * @param[in] msg printabel text
- * @param[in] size_type_msg message type size
  * @param[in] color color text
  * @param[in] effects text effects
  */
-extern void lpdt_print_dyedln_colors(void * msg,
-    unsigned long long size_type_msg,
-    struct lpdt_color_param_s const* color,
+extern void lpdt_print_dyedln_colors(char const* msg,
+    struct lpdt_color_fgbg_s * color,
     enum lpdt_effects_e const effects); 
 
 /*!
@@ -77,13 +71,11 @@ extern void lpdt_print_dyedln_colors(void * msg,
  * rgb colors without line break
  *
  * @param[in] msg printabel text
- * @param[in] size_type_msg message type size
  * @param[in] color color text
  * @param[in] effects text effects
  */
-extern void lpdt_print_dyed_rgb(void * msg,
-    unsigned long long size_type_msg,
-    struct lpdt_color_param_rgb_s const* color,
+extern void lpdt_print_dyed_rgb(char const* msg,
+    struct lpdt_color_fgbg_rgb_s * color,
     enum lpdt_effects_e const effects); 
 
 /*!
@@ -91,13 +83,11 @@ extern void lpdt_print_dyed_rgb(void * msg,
  * rgb colors with a line break
  *
  * @param[in] msg printabel text
- * @param[in] size_type_msg message type size
  * @param[in] color color text
  * @param[in] effects text effects
  */
-extern void lpdt_print_dyedln_rgb(void * msg,
-    unsigned long long size_type_msg,
-    struct lpdt_color_param_rgb_s const* color,
+extern void lpdt_print_dyedln_rgb(char const* msg,
+    struct lpdt_color_fgbg_rgb_s * color,
     enum lpdt_effects_e const effects); 
 
 /**
