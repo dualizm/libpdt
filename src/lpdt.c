@@ -42,7 +42,7 @@ void lpdt_print_dyedln_colors(char const* msg,
   puts("");
 }
 
-extern void lpdt_print_dyed_rgb(char const* msg,
+void lpdt_print_dyed_rgb(char const* msg,
     struct lpdt_color_fgbg_rgb_s * color,
     enum lpdt_effects_e const effects)
 {
@@ -59,7 +59,7 @@ extern void lpdt_print_dyed_rgb(char const* msg,
   if ( color->bg != NULL)
   {
     char rgb_buffer[MAX_BUFFER_CODE_RGB_];
-    lpdt_code_rgb(rgb_buffer, color->bg->r, color->bg->g, color->fg->b, LPDT_BG);
+    lpdt_code_rgb(rgb_buffer, color->bg->r, color->bg->g, color->bg->b, LPDT_BG);
     fputs(rgb_buffer, stdout);
     free(color->bg);
   }
@@ -76,7 +76,7 @@ extern void lpdt_print_dyed_rgb(char const* msg,
   fputs(lpdt_code_end(), stdout);
 }
 
-extern void lpdt_print_dyedln_rgb(char const* msg,
+void lpdt_print_dyedln_rgb(char const* msg,
     struct lpdt_color_fgbg_rgb_s * color,
     enum lpdt_effects_e const effects)
 {

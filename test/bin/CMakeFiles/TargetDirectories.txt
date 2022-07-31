@@ -1,0 +1,3 @@
+/home/nim/Prg/git_projects/libpdt/test/bin/CMakeFiles/lpdt_test_print.dir
+/home/nim/Prg/git_projects/libpdt/test/bin/CMakeFiles/edit_cache.dir
+/home/nim/Prg/git_projects/libpdt/test/bin/CMakeFiles/rebuild_cache.dir
