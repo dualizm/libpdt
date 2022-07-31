@@ -13,7 +13,7 @@ include_directories(src)
 
 set(TEST_PRINT_SOURCE
   ../src/lpdt.c
-  ../src/lpdt_color.c
+  ../src/lpdt_text.c
   test_print.c
 )
 

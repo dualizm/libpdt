@@ -6,7 +6,7 @@
 
 void lpdt_print_dyed_colors(char const* msg,
     struct lpdt_color_fgbg_s * color,
-    enum lpdt_effects_e const effects)
+    enum lpdt_effects_code_e const effects)
 {
   struct lpdt_buffer_effect_s *buffer_effect = lpdt_make_buffer_effect(effects);
 
@@ -36,7 +36,7 @@ void lpdt_print_dyed_colors(char const* msg,
 
 void lpdt_print_dyedln_colors(char const* msg,
     struct lpdt_color_fgbg_s * color,
-    enum lpdt_effects_e const effects)
+    enum lpdt_effects_code_e const effects)
 {
   lpdt_print_dyed_colors(msg, color, effects);
   puts("");
@@ -44,7 +44,7 @@ void lpdt_print_dyedln_colors(char const* msg,
 
 void lpdt_print_dyed_rgb(char const* msg,
     struct lpdt_color_fgbg_rgb_s * color,
-    enum lpdt_effects_e const effects)
+    enum lpdt_effects_code_e const effects)
 {
   struct lpdt_buffer_effect_s *buffer_effect = lpdt_make_buffer_effect(effects);
 
@@ -78,7 +78,7 @@ void lpdt_print_dyed_rgb(char const* msg,
 
 void lpdt_print_dyedln_rgb(char const* msg,
     struct lpdt_color_fgbg_rgb_s * color,
-    enum lpdt_effects_e const effects)
+    enum lpdt_effects_code_e const effects)
 {
   lpdt_print_dyed_rgb(msg, color, effects);
   puts("");

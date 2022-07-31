@@ -1,11 +1,11 @@
 #pragma once
-#ifndef LPDT_COLOR_H_
-#define LDPT_COLOR_H_
+#ifndef LPDT_TEXT_H_
+#define LDPT_TEXT_H_
 
 /*!
 |+------------------------------------------------------------------------+|*
  * @file
- * @brief The file contains information for obtaining a sequence of symbols of color, type, effect
+ * @brief This file contains api for working with text and getting anci codes
  * @authors notidman
  * @version 1.0
  * @date 26-07-22
@@ -17,7 +17,7 @@
 
 //************************__TYPES__*******************************************
 //! Color encoding enumeration
-enum lpdt_colors_e
+enum lpdt_colors_code_e
 {
   LPDT_COLOR_BLACK           = 0x00,
   LPDT_COLOR_BLUE            = 0x01,
@@ -35,12 +35,13 @@ enum lpdt_colors_e
   LPDT_COLOR_BRIGHT_MAGENTA  = 0x0D,
   LPDT_COLOR_BRIGHT_YELLOW   = 0x0E,
   LPDT_COLOR_BRIGHT_WHITE    = 0x0F,
-  LPDT_COLOR_STANDARD        = 0x10,
+  LPDT_COLOR_DEFAULT         = 0xFF,
 };
 
 //! Text effect enumeration
-enum lpdt_effects_e
+enum lpdt_effects_code_e
 {
+  LPDT_EFFECT_RESET       = 0x00,
   LPDT_EFFECT_BOLD        = 0x01,
   LPDT_EFFECT_FAINT       = 0x02,
   LPDT_EFFECT_ITALIC      = 0x04,
@@ -51,6 +52,16 @@ enum lpdt_effects_e
   LPDT_EFFECT_INVISIBLE   = 0x80,
   LPDT_EFFECT_OVERLINE    = 0x100,
 }; 
+
+//! Reset codes enumeration
+enum lpdt_reset_code_e
+{
+  LPDT_RESET_ATTRIB   = 0x01,
+  LPDT_RESET_FG       = 0x02,
+  LPDT_RESET_BG       = 0x03,
+  LPDT_RESET_COLOR    = 0x04,
+  LPDT_RESET_FONT     = 0x05,
+};
 
 //! Text type enumeration
 enum lpdt_color_type_e
@@ -74,8 +85,8 @@ struct lpdt_color_rgb_bg_s
 //! Color param
 struct lpdt_color_fgbg_s
 {
-  enum lpdt_colors_e * fg;
-  enum lpdt_colors_e * bg;
+  enum lpdt_colors_code_e * fg;
+  enum lpdt_colors_code_e * bg;
 };
 
 //! Rgb color param
@@ -86,7 +97,7 @@ struct lpdt_color_fgbg_rgb_s
 };
 
 //! Buffer for effect seq char
-#define LPDT_BUFFER_EFFECT_LEN 360
+#define LPDT_BUFFER_EFFECT_LEN 72
 struct lpdt_buffer_effect_s
 {
   char data[LPDT_BUFFER_EFFECT_LEN];
@@ -102,8 +113,8 @@ struct lpdt_make_color_fgbg_rgb_args
 //! struct for wrap args
 struct lpdt_make_color_fgbg_args
 {
-  enum lpdt_colors_e color_fg;
-  enum lpdt_colors_e color_bg;
+  enum lpdt_colors_code_e color_fg;
+  enum lpdt_colors_code_e color_bg;
 };
 
 //************************__TYPES__*******************************************
@@ -121,15 +132,15 @@ extern struct lpdt_buffer_code_rgb_s * lpdt_make_buffer_rgb_code(void);
  *@param[in] effects effects to buffer
  *@return pointer on buffer
  */
-extern struct lpdt_buffer_effect_s * lpdt_make_buffer_effect(enum lpdt_effects_e const effects);
+extern struct lpdt_buffer_effect_s * lpdt_make_buffer_effect(enum lpdt_effects_code_e const effects);
 
 /*!
  *@brief init new param for print
  *@param[in] color_fg foreground color text
  *@param[in] color_bg background color text
  */
-extern struct lpdt_color_fgbg_s* lpdt_make_color_fgbg_base(enum lpdt_colors_e const* color_fg,
-    enum lpdt_colors_e const* color_bg);
+extern struct lpdt_color_fgbg_s* lpdt_make_color_fgbg_base(enum lpdt_colors_code_e const* color_fg,
+    enum lpdt_colors_code_e const* color_bg);
 
 /*!
  *@brief function wrapper
@@ -237,7 +248,7 @@ extern struct lpdt_color_rgb_bg_s* lpdt_init_color_rgb_bg(unsigned char const r,
  * @param[in] effect effect name
  * @return effect code
  */
-extern char const* lpdt_code_effect(enum lpdt_effects_e const effect);
+extern char const* lpdt_code_effect(enum lpdt_effects_code_e const effect);
 
 /*!
  *@brief get end characters
@@ -251,7 +262,7 @@ extern char const* lpdt_code_end(void);
  * @param[in] type color type[fg,bg]
  * @return color code
  */
-extern char const* lpdt_code_color(enum lpdt_colors_e const color,
+extern char const* lpdt_code_color(enum lpdt_colors_code_e const color,
     enum lpdt_color_type_e const type);
 
 /*!
@@ -268,5 +279,12 @@ extern void lpdt_code_rgb(char destination[static MAX_BUFFER_CODE_RGB_],
     unsigned char const r, unsigned char const g, unsigned char const b,
     enum lpdt_color_type_e const type);
 
+/*!
+ *@brief function returns reset code
+ *@param[in] reset_code reset code name
+ *@return reset code
+ */
+extern char const* lpdt_code_reset(enum lpdt_reset_code_e const reset_code);
+
 //************************__FUNCTIONS__**************************************
-#endif /* LPDT_COLOR_H_ */
+#endif /* LPDT_TEXT_H_ */

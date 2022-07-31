@@ -1,9 +1,10 @@
-#include "lpdt_color.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 
-char const* lpdt_code_color(enum lpdt_colors_e const color,
+#include "lpdt_text.h"
+
+char const* lpdt_code_color(enum lpdt_colors_code_e const color,
     enum lpdt_color_type_e const type) 
 {
   char const* code = NULL;
@@ -19,7 +20,7 @@ char const* lpdt_code_color(enum lpdt_colors_e const color,
       case LPDT_COLOR_MAGENTA:        code = "\033[0;35m"  ; break;
       case LPDT_COLOR_CYAN:           code = "\033[0;36m"  ; break;
       case LPDT_COLOR_WHITE:          code = "\033[0;37m"  ; break;
-      case LPDT_COLOR_STANDARD:       code = "\033[0;39m"  ; break;
+      case LPDT_COLOR_DEFAULT:        code = "\033[0;39m"  ; break;
       case LPDT_COLOR_BRIGHT_BLACK:   code = "\033[0;90m"  ; break;
       case LPDT_COLOR_BRIGHT_RED:     code = "\033[0;91m"  ; break;
       case LPDT_COLOR_BRIGHT_GREEN:   code = "\033[0;92m"  ; break;
@@ -42,7 +43,7 @@ char const* lpdt_code_color(enum lpdt_colors_e const color,
       case LPDT_COLOR_MAGENTA:        code = "\033[0;45m"  ; break;
       case LPDT_COLOR_CYAN:           code = "\033[0;46m"  ; break;
       case LPDT_COLOR_WHITE:          code = "\033[0;47m"  ; break;
-      case LPDT_COLOR_STANDARD:       code = "\033[0;49m"  ; break;
+      case LPDT_COLOR_DEFAULT:        code = "\033[0;49m"  ; break;
       case LPDT_COLOR_BRIGHT_BLACK:   code = "\033[0;100m" ; break;
       case LPDT_COLOR_BRIGHT_RED:     code = "\033[0;101m" ; break;
       case LPDT_COLOR_BRIGHT_GREEN:   code = "\033[0;102m" ; break;
@@ -73,11 +74,12 @@ void lpdt_code_rgb(char destination[static MAX_BUFFER_CODE_RGB_],
   }
 }
 
-char const* lpdt_code_effect(enum lpdt_effects_e const effect) 
+char const* lpdt_code_effect(enum lpdt_effects_code_e const effect) 
 {
   char const* code = NULL;
   switch (effect)
   {
+    case LPDT_EFFECT_RESET:       code = "\033[0m"; break;
     case LPDT_EFFECT_BOLD:        code = "\033[1m"; break;
     case LPDT_EFFECT_FAINT:       code = "\033[2m"; break;
     case LPDT_EFFECT_ITALIC:      code = "\033[3m"; break;
@@ -96,6 +98,22 @@ char const* lpdt_code_end(void)
 {
   return "\033[0m";
 }
+
+extern char const* lpdt_code_reset(enum lpdt_reset_code_e const reset_code)
+{
+  char const* code_reset = NULL;
+  switch(reset_code)
+  {
+    case LPDT_RESET_ATTRIB:   code_reset = "\033[22;23;24;25;27;28;29;54;55m" ; break;
+    case LPDT_RESET_FG:       code_reset = "\033[39m"                         ; break;
+    case LPDT_RESET_BG:       code_reset = "\033[49m"                         ; break;
+    case LPDT_RESET_COLOR:    code_reset = "\033[0m"                          ; break;
+    case LPDT_RESET_FONT:     code_reset = "\033[10m"                         ; break;
+  }
+
+  return code_reset;
+}
+
 /* extern struct lpdt_color_rgb_fg_s* init_color_rgb_fg(unsigned char const r, */
 /*     unsigned char const g, unsigned cha const b) */
 /* { */
@@ -121,8 +139,8 @@ char const* lpdt_code_end(void)
 /* } */
 
 //---------------------------------------MAKE_COLOR_PARAM----------------------------------------------
-struct lpdt_color_fgbg_s* lpdt_make_color_fgbg_base(enum lpdt_colors_e const* color_fg,
-    enum lpdt_colors_e const* color_bg)
+struct lpdt_color_fgbg_s* lpdt_make_color_fgbg_base(enum lpdt_colors_code_e const* color_fg,
+    enum lpdt_colors_code_e const* color_bg)
 {
   struct lpdt_color_fgbg_s * new_param = malloc(sizeof(*new_param));
   if ( color_fg != NULL)
@@ -150,8 +168,8 @@ struct lpdt_color_fgbg_s* lpdt_make_color_fgbg_base(enum lpdt_colors_e const* co
 
 struct lpdt_color_fgbg_s* lpdt_make_color_fgbg_wrap(struct lpdt_make_color_fgbg_args args)
 {
-  enum lpdt_colors_e const* color_fg = args.color_fg ? &args.color_fg : NULL;
-  enum lpdt_colors_e const* color_bg = args.color_bg ? &args.color_bg : NULL;
+  enum lpdt_colors_code_e const* color_fg = args.color_fg ? &args.color_fg : NULL;
+  enum lpdt_colors_code_e const* color_bg = args.color_bg ? &args.color_bg : NULL;
   return lpdt_make_color_fgbg_base(color_fg, color_bg);
 }
 //---------------------------------------MAKE_COLOR_PARAM----------------------------------------------
@@ -191,7 +209,7 @@ struct lpdt_color_fgbg_rgb_s* lpdt_make_color_fgbg_rgb_wrap(struct lpdt_make_col
 
 //---------------------------------------MAKE_COLOR_PARAM_RGB------------------------------------------
 
-struct lpdt_buffer_effect_s* lpdt_make_buffer_effect(enum lpdt_effects_e const effects)
+struct lpdt_buffer_effect_s* lpdt_make_buffer_effect(enum lpdt_effects_code_e const effects)
 {
   struct lpdt_buffer_effect_s * new_buffer = malloc(sizeof(*new_buffer));
   memset(new_buffer->data, '\0', LPDT_BUFFER_EFFECT_LEN);

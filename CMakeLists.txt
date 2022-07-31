@@ -13,7 +13,7 @@ include_directories(src)
 
 set(LPDT_SOURCE
   src/lpdt.c
-  src/lpdt_color.c
+  src/lpdt_text.c
 )
 
 add_library(pdt SHARED ${LPDT_SOURCE})

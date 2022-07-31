@@ -1,7 +1,7 @@
 #pragma once
 #ifndef LPDT_H_
 #define LPDT_H_
-#include "lpdt_color.h"
+#include "lpdt_text.h"
 
 /*!
 |+------------------------------------------------------------------------+|*
@@ -52,7 +52,7 @@
  */
 extern void lpdt_print_dyed_colors(char const* msg,
     struct lpdt_color_fgbg_s* color,
-    enum lpdt_effects_e const effects); 
+    enum lpdt_effects_code_e const effects); 
 
 /*!
  * The function to print text to the console 
@@ -64,7 +64,7 @@ extern void lpdt_print_dyed_colors(char const* msg,
  */
 extern void lpdt_print_dyedln_colors(char const* msg,
     struct lpdt_color_fgbg_s * color,
-    enum lpdt_effects_e const effects); 
+    enum lpdt_effects_code_e const effects); 
 
 /*!
  * The function to print text to the console with
@@ -76,7 +76,7 @@ extern void lpdt_print_dyedln_colors(char const* msg,
  */
 extern void lpdt_print_dyed_rgb(char const* msg,
     struct lpdt_color_fgbg_rgb_s * color,
-    enum lpdt_effects_e const effects); 
+    enum lpdt_effects_code_e const effects); 
 
 /*!
  * The function to print text to the console with
@@ -88,7 +88,7 @@ extern void lpdt_print_dyed_rgb(char const* msg,
  */
 extern void lpdt_print_dyedln_rgb(char const* msg,
     struct lpdt_color_fgbg_rgb_s * color,
-    enum lpdt_effects_e const effects); 
+    enum lpdt_effects_code_e const effects); 
 
 /**
  *
