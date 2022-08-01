@@ -58,6 +58,13 @@ build CMakeFiles/lpdt_test_print.dir/home/nim/Prg/git_projects/libpdt/src/lpdt_t
   OBJECT_DIR = CMakeFiles/lpdt_test_print.dir
   OBJECT_FILE_DIR = CMakeFiles/lpdt_test_print.dir/home/nim/Prg/git_projects/libpdt/src
 
+build CMakeFiles/lpdt_test_print.dir/home/nim/Prg/git_projects/libpdt/src/lpdt_codes.c.o: C_COMPILER__lpdt_test_print_ /home/nim/Prg/git_projects/libpdt/src/lpdt_codes.c || cmake_object_order_depends_target_lpdt_test_print
+  DEP_FILE = CMakeFiles/lpdt_test_print.dir/home/nim/Prg/git_projects/libpdt/src/lpdt_codes.c.o.d
+  FLAGS = -g -Werror -Wall -Wextra -Wpedantic -fPIC -march=native -std=gnu2x
+  INCLUDES = -I/home/nim/Prg/git_projects/libpdt/test/src
+  OBJECT_DIR = CMakeFiles/lpdt_test_print.dir
+  OBJECT_FILE_DIR = CMakeFiles/lpdt_test_print.dir/home/nim/Prg/git_projects/libpdt/src
+
 build CMakeFiles/lpdt_test_print.dir/test_print.c.o: C_COMPILER__lpdt_test_print_ /home/nim/Prg/git_projects/libpdt/test/test_print.c || cmake_object_order_depends_target_lpdt_test_print
   DEP_FILE = CMakeFiles/lpdt_test_print.dir/test_print.c.o.d
   FLAGS = -g -Werror -Wall -Wextra -Wpedantic -fPIC -march=native -std=gnu2x
@@ -73,7 +80,7 @@ build CMakeFiles/lpdt_test_print.dir/test_print.c.o: C_COMPILER__lpdt_test_print
 #############################################
 # Link the executable lpdt_test_print
 
-build lpdt_test_print: C_EXECUTABLE_LINKER__lpdt_test_print_ CMakeFiles/lpdt_test_print.dir/home/nim/Prg/git_projects/libpdt/src/lpdt.c.o CMakeFiles/lpdt_test_print.dir/home/nim/Prg/git_projects/libpdt/src/lpdt_text.c.o CMakeFiles/lpdt_test_print.dir/test_print.c.o
+build lpdt_test_print: C_EXECUTABLE_LINKER__lpdt_test_print_ CMakeFiles/lpdt_test_print.dir/home/nim/Prg/git_projects/libpdt/src/lpdt.c.o CMakeFiles/lpdt_test_print.dir/home/nim/Prg/git_projects/libpdt/src/lpdt_text.c.o CMakeFiles/lpdt_test_print.dir/home/nim/Prg/git_projects/libpdt/src/lpdt_codes.c.o CMakeFiles/lpdt_test_print.dir/test_print.c.o
   LINK_FLAGS = -rdynamic
   OBJECT_DIR = CMakeFiles/lpdt_test_print.dir
   POST_BUILD = :

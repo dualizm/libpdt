@@ -11,6 +11,11 @@
 },
 {
   "directory": "/home/nim/Prg/git_projects/libpdt/test/bin",
+  "command": "/usr/lib/llvm/13/bin/clang -I/home/nim/Prg/git_projects/libpdt/test/src -g -Werror -Wall -Wextra -Wpedantic -fPIC -march=native -std=gnu2x -o CMakeFiles/lpdt_test_print.dir/home/nim/Prg/git_projects/libpdt/src/lpdt_codes.c.o -c /home/nim/Prg/git_projects/libpdt/src/lpdt_codes.c",
+  "file": "/home/nim/Prg/git_projects/libpdt/src/lpdt_codes.c"
+},
+{
+  "directory": "/home/nim/Prg/git_projects/libpdt/test/bin",
   "command": "/usr/lib/llvm/13/bin/clang -I/home/nim/Prg/git_projects/libpdt/test/src -g -Werror -Wall -Wextra -Wpedantic -fPIC -march=native -std=gnu2x -o CMakeFiles/lpdt_test_print.dir/test_print.c.o -c /home/nim/Prg/git_projects/libpdt/test/test_print.c",
   "file": "/home/nim/Prg/git_projects/libpdt/test/test_print.c"
 }

@@ -14,6 +14,7 @@ include_directories(src)
 set(TEST_PRINT_SOURCE
   ../src/lpdt.c
   ../src/lpdt_text.c
+  ../src/lpdt_codes.c
   test_print.c
 )
 
