@@ -14,12 +14,7 @@ include_directories(src)
 set(LPDT_SOURCE
   src/lpdt.c
   src/lpdt_text.c
+  src/lpdt_codes.c
 )
 
 add_library(pdt SHARED ${LPDT_SOURCE})
-
-# TEST_PRINT
-set(TEST_PRINT ${PROJECT_NAME}_test_print)
-add_executable(${TEST_PRINT} test/test_print.c)
-target_link_libraries(${TEST_PRINT} pdt)
-target_compile_options(${TEST_PRINT} PUBLIC ${COMPILER_OPT_TEST})

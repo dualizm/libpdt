@@ -98,8 +98,8 @@ extern char const* lpdt_code_color(enum lpdt_colors_code_e const color,
  * @param[in] type color type[fg,bg]
  * @return rgb color code
  */
-#define MAX_BUFFER_CODE_RGB_ 20
-extern void lpdt_code_rgb(char destination[static MAX_BUFFER_CODE_RGB_],
+#define LPDT_MAX_BUFFER_CODE_RGB_ 20
+extern void lpdt_code_rgb(char destination[static LPDT_MAX_BUFFER_CODE_RGB_],
     unsigned char const r, unsigned char const g, unsigned char const b,
     enum lpdt_color_type_e const type);
 

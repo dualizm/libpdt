@@ -51,14 +51,14 @@ void lpdt_print_dyed_rgb(char const* msg,
   // Print rgb color code
   if ( color->fg != NULL)
   {
-    char rgb_buffer[MAX_BUFFER_CODE_RGB_];
+    char rgb_buffer[LPDT_MAX_BUFFER_CODE_RGB_];
     lpdt_code_rgb(rgb_buffer, color->fg->r, color->fg->g, color->fg->b, LPDT_FG);
     fputs(rgb_buffer, stdout);
     free(color->fg);
   }
   if ( color->bg != NULL)
   {
-    char rgb_buffer[MAX_BUFFER_CODE_RGB_];
+    char rgb_buffer[LPDT_MAX_BUFFER_CODE_RGB_];
     lpdt_code_rgb(rgb_buffer, color->bg->r, color->bg->g, color->bg->b, LPDT_BG);
     fputs(rgb_buffer, stdout);
     free(color->bg);

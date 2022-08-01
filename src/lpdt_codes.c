@@ -1,5 +1,6 @@
 #include "lpdt_codes.h"
 #include <stdlib.h>
+#include <stdio.h>
 
 char const* lpdt_code_color(enum lpdt_colors_code_e const color,
     enum lpdt_color_type_e const type) 
@@ -55,18 +56,18 @@ char const* lpdt_code_color(enum lpdt_colors_code_e const color,
   return code;
 }
 
-void lpdt_code_rgb(char destination[static MAX_BUFFER_CODE_RGB_],
+void lpdt_code_rgb(char destination[static LPDT_MAX_BUFFER_CODE_RGB_],
     unsigned char const r, unsigned char const g, unsigned char const b,
     enum lpdt_color_type_e const type)
 {
   if ( type == LPDT_FG)
   {
-    snprintf(destination, MAX_BUFFER_CODE_RGB_,
+    snprintf(destination, LPDT_MAX_BUFFER_CODE_RGB_,
         "\033[38;2;%d;%d;%dm", r, g, b);
   }
   else if ( type == LPDT_BG)
   {
-    snprintf(destination, MAX_BUFFER_CODE_RGB_,
+    snprintf(destination, LPDT_MAX_BUFFER_CODE_RGB_,
         "\033[48;2;%d;%d;%dm", r, g, b);
   }
 }
