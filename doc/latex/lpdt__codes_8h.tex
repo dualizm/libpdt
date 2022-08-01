@@ -1,0 +1,208 @@
+\hypertarget{lpdt__codes_8h}{}\doxysection{src/lpdt\+\_\+codes.h File Reference}
+\label{lpdt__codes_8h}\index{src/lpdt\_codes.h@{src/lpdt\_codes.h}}
+
+
+This file contains api for getting anci codes.  
+
+
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{lpdt__codes_8h_a804ec8bab91c6208f2805899d338b9f8}\label{lpdt__codes_8h_a804ec8bab91c6208f2805899d338b9f8}} 
+\#define {\bfseries LPDT\+\_\+\+CODES\+\_\+\+H\+\_\+}
+\item 
+\#define \mbox{\hyperlink{lpdt__codes_8h_a3df633dcf4b8f2ff1dfe24eb99713895}{MAX\+\_\+\+BUFFER\+\_\+\+CODE\+\_\+\+RGB\+\_\+}}~20
+\begin{DoxyCompactList}\small\item\em get control characters for desired color. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{lpdt__codes_8h_a00ff07b6e5a76075b97a687d01030b6c}\label{lpdt__codes_8h_a00ff07b6e5a76075b97a687d01030b6c}} 
+enum \mbox{\hyperlink{lpdt__codes_8h_a00ff07b6e5a76075b97a687d01030b6c}{lpdt\+\_\+colors\+\_\+code\+\_\+e}} \{ \newline
+{\bfseries LPDT\+\_\+\+COLOR\+\_\+\+BLACK} = 0x00
+, {\bfseries LPDT\+\_\+\+COLOR\+\_\+\+BLUE} = 0x01
+, {\bfseries LPDT\+\_\+\+COLOR\+\_\+\+GREEN} = 0x02
+, {\bfseries LPDT\+\_\+\+COLOR\+\_\+\+CYAN} = 0x03
+, \newline
+{\bfseries LPDT\+\_\+\+COLOR\+\_\+\+RED} = 0x04
+, {\bfseries LPDT\+\_\+\+COLOR\+\_\+\+MAGENTA} = 0x05
+, {\bfseries LPDT\+\_\+\+COLOR\+\_\+\+YELLOW} = 0x06
+, {\bfseries LPDT\+\_\+\+COLOR\+\_\+\+WHITE} = 0x07
+, \newline
+{\bfseries LPDT\+\_\+\+COLOR\+\_\+\+BRIGHT\+\_\+\+BLACK} = 0x08
+, {\bfseries LPDT\+\_\+\+COLOR\+\_\+\+BRIGHT\+\_\+\+BLUE} = 0x09
+, {\bfseries LPDT\+\_\+\+COLOR\+\_\+\+BRIGHT\+\_\+\+GREEN} = 0x0A
+, {\bfseries LPDT\+\_\+\+COLOR\+\_\+\+BRIGHT\+\_\+\+CYAN} = 0x0B
+, \newline
+{\bfseries LPDT\+\_\+\+COLOR\+\_\+\+BRIGHT\+\_\+\+RED} = 0x0C
+, {\bfseries LPDT\+\_\+\+COLOR\+\_\+\+BRIGHT\+\_\+\+MAGENTA} = 0x0D
+, {\bfseries LPDT\+\_\+\+COLOR\+\_\+\+BRIGHT\+\_\+\+YELLOW} = 0x0E
+, {\bfseries LPDT\+\_\+\+COLOR\+\_\+\+BRIGHT\+\_\+\+WHITE} = 0x0F
+, \newline
+{\bfseries LPDT\+\_\+\+COLOR\+\_\+\+DEFAULT} = 0x\+FF
+ \}
+\begin{DoxyCompactList}\small\item\em Color encoding enumeration. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{lpdt__codes_8h_a68b9f4f02d90c0f06313fac07e98ff80}\label{lpdt__codes_8h_a68b9f4f02d90c0f06313fac07e98ff80}} 
+enum \mbox{\hyperlink{lpdt__codes_8h_a68b9f4f02d90c0f06313fac07e98ff80}{lpdt\+\_\+effects\+\_\+code\+\_\+e}} \{ \newline
+{\bfseries LPDT\+\_\+\+EFFECT\+\_\+\+RESET} = 0x00
+, {\bfseries LPDT\+\_\+\+EFFECT\+\_\+\+BOLD} = 0x01
+, {\bfseries LPDT\+\_\+\+EFFECT\+\_\+\+FAINT} = 0x02
+, {\bfseries LPDT\+\_\+\+EFFECT\+\_\+\+ITALIC} = 0x04
+, \newline
+{\bfseries LPDT\+\_\+\+EFFECT\+\_\+\+UNDERLINE} = 0x08
+, {\bfseries LPDT\+\_\+\+EFFECT\+\_\+\+BLINK} = 0x10
+, {\bfseries LPDT\+\_\+\+EFFECT\+\_\+\+RAPID\+\_\+\+BLINK} = 0x20
+, {\bfseries LPDT\+\_\+\+EFFECT\+\_\+\+INVERSE} = 0x40
+, \newline
+{\bfseries LPDT\+\_\+\+EFFECT\+\_\+\+INVISIBLE} = 0x80
+, {\bfseries LPDT\+\_\+\+EFFECT\+\_\+\+OVERLINE} = 0x100
+ \}
+\begin{DoxyCompactList}\small\item\em Text effect enumeration. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{lpdt__codes_8h_a1f437b4788e2cbc1a6169823f7eee545}\label{lpdt__codes_8h_a1f437b4788e2cbc1a6169823f7eee545}} 
+enum \mbox{\hyperlink{lpdt__codes_8h_a1f437b4788e2cbc1a6169823f7eee545}{lpdt\+\_\+reset\+\_\+code\+\_\+e}} \{ \newline
+{\bfseries LPDT\+\_\+\+RESET\+\_\+\+ATTRIB} = 0x01
+, {\bfseries LPDT\+\_\+\+RESET\+\_\+\+FG} = 0x02
+, {\bfseries LPDT\+\_\+\+RESET\+\_\+\+BG} = 0x03
+, {\bfseries LPDT\+\_\+\+RESET\+\_\+\+COLOR} = 0x04
+, \newline
+{\bfseries LPDT\+\_\+\+RESET\+\_\+\+FONT} = 0x05
+ \}
+\begin{DoxyCompactList}\small\item\em Reset codes enumeration. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{lpdt__codes_8h_a6fbb08f2cb267ff11dbfafc43fd57db6}\label{lpdt__codes_8h_a6fbb08f2cb267ff11dbfafc43fd57db6}} 
+enum \mbox{\hyperlink{lpdt__codes_8h_a6fbb08f2cb267ff11dbfafc43fd57db6}{lpdt\+\_\+color\+\_\+type\+\_\+e}} \{ {\bfseries LPDT\+\_\+\+FG} = 0x01
+, {\bfseries LPDT\+\_\+\+BG} = 0x02
+ \}
+\begin{DoxyCompactList}\small\item\em Text type enumeration. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+char const  $\ast$ \mbox{\hyperlink{lpdt__codes_8h_a0be54193e1f641f5801c283f6eb175ab}{lpdt\+\_\+code\+\_\+effect}} (enum \mbox{\hyperlink{lpdt__codes_8h_a68b9f4f02d90c0f06313fac07e98ff80}{lpdt\+\_\+effects\+\_\+code\+\_\+e}} const effect)
+\begin{DoxyCompactList}\small\item\em get control characters for desired effect. \end{DoxyCompactList}\item 
+char const  $\ast$ \mbox{\hyperlink{lpdt__codes_8h_a6ad5d819665a5a70c2d6c4b52d32d615}{lpdt\+\_\+code\+\_\+end}} (void)
+\begin{DoxyCompactList}\small\item\em get end characters \end{DoxyCompactList}\item 
+char const  $\ast$ \mbox{\hyperlink{lpdt__codes_8h_a5dc9729de0eb42e1e9b9fb8d66c86c64}{lpdt\+\_\+code\+\_\+color}} (enum \mbox{\hyperlink{lpdt__codes_8h_a00ff07b6e5a76075b97a687d01030b6c}{lpdt\+\_\+colors\+\_\+code\+\_\+e}} const color, enum \mbox{\hyperlink{lpdt__codes_8h_a6fbb08f2cb267ff11dbfafc43fd57db6}{lpdt\+\_\+color\+\_\+type\+\_\+e}} const type)
+\begin{DoxyCompactList}\small\item\em get control characters for desired color. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{lpdt__codes_8h_a17e7e366a6d031aa75e76321580a497a}\label{lpdt__codes_8h_a17e7e366a6d031aa75e76321580a497a}} 
+void {\bfseries lpdt\+\_\+code\+\_\+rgb} (char destination\mbox{[}static \mbox{\hyperlink{lpdt__codes_8h_a3df633dcf4b8f2ff1dfe24eb99713895}{MAX\+\_\+\+BUFFER\+\_\+\+CODE\+\_\+\+RGB\+\_\+}}\mbox{]}, unsigned char const r, unsigned char const g, unsigned char const b, enum \mbox{\hyperlink{lpdt__codes_8h_a6fbb08f2cb267ff11dbfafc43fd57db6}{lpdt\+\_\+color\+\_\+type\+\_\+e}} const type)
+\item 
+char const  $\ast$ \mbox{\hyperlink{lpdt__codes_8h_a08c629dbd6257670be904af5f8f9b3f4}{lpdt\+\_\+code\+\_\+reset}} (enum \mbox{\hyperlink{lpdt__codes_8h_a1f437b4788e2cbc1a6169823f7eee545}{lpdt\+\_\+reset\+\_\+code\+\_\+e}} const reset\+\_\+code)
+\begin{DoxyCompactList}\small\item\em function returns reset code \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This file contains api for getting anci codes. 
+
+$\vert$+-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/---+$\vert$$\ast$
+
+\begin{DoxyAuthor}{Authors}
+notidman 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+26-\/07-\/22 
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+MIT License
+\end{DoxyCopyright}
+$\vert$+-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/---$\vert$ LPDT $\vert$-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/---+$\vert$$\ast$ 
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{lpdt__codes_8h_a3df633dcf4b8f2ff1dfe24eb99713895}\label{lpdt__codes_8h_a3df633dcf4b8f2ff1dfe24eb99713895}} 
+\index{lpdt\_codes.h@{lpdt\_codes.h}!MAX\_BUFFER\_CODE\_RGB\_@{MAX\_BUFFER\_CODE\_RGB\_}}
+\index{MAX\_BUFFER\_CODE\_RGB\_@{MAX\_BUFFER\_CODE\_RGB\_}!lpdt\_codes.h@{lpdt\_codes.h}}
+\doxysubsubsection{\texorpdfstring{MAX\_BUFFER\_CODE\_RGB\_}{MAX\_BUFFER\_CODE\_RGB\_}}
+{\footnotesize\ttfamily \#define MAX\+\_\+\+BUFFER\+\_\+\+CODE\+\_\+\+RGB\+\_\+~20}
+
+
+
+get control characters for desired color. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ out}}  & {\em destination} & pointer to the target array into which the rgb sequence of characters will be copied. \\
+\hline
+\mbox{\texttt{ in}}  & {\em r} & red color code \\
+\hline
+\mbox{\texttt{ in}}  & {\em g} & green color code \\
+\hline
+\mbox{\texttt{ in}}  & {\em b} & blue color code \\
+\hline
+\mbox{\texttt{ in}}  & {\em type} & color type\mbox{[}fg,bg\mbox{]} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+rgb color code 
+\end{DoxyReturn}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{lpdt__codes_8h_a5dc9729de0eb42e1e9b9fb8d66c86c64}\label{lpdt__codes_8h_a5dc9729de0eb42e1e9b9fb8d66c86c64}} 
+\index{lpdt\_codes.h@{lpdt\_codes.h}!lpdt\_code\_color@{lpdt\_code\_color}}
+\index{lpdt\_code\_color@{lpdt\_code\_color}!lpdt\_codes.h@{lpdt\_codes.h}}
+\doxysubsubsection{\texorpdfstring{lpdt\_code\_color()}{lpdt\_code\_color()}}
+{\footnotesize\ttfamily char const$\ast$ lpdt\+\_\+code\+\_\+color (\begin{DoxyParamCaption}\item[{enum \mbox{\hyperlink{lpdt__codes_8h_a00ff07b6e5a76075b97a687d01030b6c}{lpdt\+\_\+colors\+\_\+code\+\_\+e}} const}]{color,  }\item[{enum \mbox{\hyperlink{lpdt__codes_8h_a6fbb08f2cb267ff11dbfafc43fd57db6}{lpdt\+\_\+color\+\_\+type\+\_\+e}} const}]{type }\end{DoxyParamCaption})}
+
+
+
+get control characters for desired color. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em color} & color name \\
+\hline
+\mbox{\texttt{ in}}  & {\em type} & color type\mbox{[}fg,bg\mbox{]} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+color code 
+\end{DoxyReturn}
+\mbox{\Hypertarget{lpdt__codes_8h_a0be54193e1f641f5801c283f6eb175ab}\label{lpdt__codes_8h_a0be54193e1f641f5801c283f6eb175ab}} 
+\index{lpdt\_codes.h@{lpdt\_codes.h}!lpdt\_code\_effect@{lpdt\_code\_effect}}
+\index{lpdt\_code\_effect@{lpdt\_code\_effect}!lpdt\_codes.h@{lpdt\_codes.h}}
+\doxysubsubsection{\texorpdfstring{lpdt\_code\_effect()}{lpdt\_code\_effect()}}
+{\footnotesize\ttfamily char const$\ast$ lpdt\+\_\+code\+\_\+effect (\begin{DoxyParamCaption}\item[{enum \mbox{\hyperlink{lpdt__codes_8h_a68b9f4f02d90c0f06313fac07e98ff80}{lpdt\+\_\+effects\+\_\+code\+\_\+e}} const}]{effect }\end{DoxyParamCaption})}
+
+
+
+get control characters for desired effect. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em effect} & effect name \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+effect code 
+\end{DoxyReturn}
+\mbox{\Hypertarget{lpdt__codes_8h_a6ad5d819665a5a70c2d6c4b52d32d615}\label{lpdt__codes_8h_a6ad5d819665a5a70c2d6c4b52d32d615}} 
+\index{lpdt\_codes.h@{lpdt\_codes.h}!lpdt\_code\_end@{lpdt\_code\_end}}
+\index{lpdt\_code\_end@{lpdt\_code\_end}!lpdt\_codes.h@{lpdt\_codes.h}}
+\doxysubsubsection{\texorpdfstring{lpdt\_code\_end()}{lpdt\_code\_end()}}
+{\footnotesize\ttfamily char const$\ast$ lpdt\+\_\+code\+\_\+end (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+get end characters 
+
+\begin{DoxyReturn}{Returns}
+end code 
+\end{DoxyReturn}
+\mbox{\Hypertarget{lpdt__codes_8h_a08c629dbd6257670be904af5f8f9b3f4}\label{lpdt__codes_8h_a08c629dbd6257670be904af5f8f9b3f4}} 
+\index{lpdt\_codes.h@{lpdt\_codes.h}!lpdt\_code\_reset@{lpdt\_code\_reset}}
+\index{lpdt\_code\_reset@{lpdt\_code\_reset}!lpdt\_codes.h@{lpdt\_codes.h}}
+\doxysubsubsection{\texorpdfstring{lpdt\_code\_reset()}{lpdt\_code\_reset()}}
+{\footnotesize\ttfamily char const$\ast$ lpdt\+\_\+code\+\_\+reset (\begin{DoxyParamCaption}\item[{enum \mbox{\hyperlink{lpdt__codes_8h_a1f437b4788e2cbc1a6169823f7eee545}{lpdt\+\_\+reset\+\_\+code\+\_\+e}} const}]{reset\+\_\+code }\end{DoxyParamCaption})}
+
+
+
+function returns reset code 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em reset\+\_\+code} & reset code name \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+reset code 
+\end{DoxyReturn}

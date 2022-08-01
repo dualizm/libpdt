@@ -1,6 +1,7 @@
 var searchData=
 [
-  ['lpdt_5fcolor_5ftype_5fe_45',['lpdt_color_type_e',['../lpdt__color_8h.html#a6fbb08f2cb267ff11dbfafc43fd57db6',1,'lpdt_color.h']]],
-  ['lpdt_5fcolors_5fe_46',['lpdt_colors_e',['../lpdt__color_8h.html#a09bee71c49709edf237325befbd85b79',1,'lpdt_color.h']]],
-  ['lpdt_5feffects_5fe_47',['lpdt_effects_e',['../lpdt__color_8h.html#ae86241648b0a03bbdd80274f33ef33fc',1,'lpdt_color.h']]]
+  ['lpdt_5fcolor_5ftype_5fe_68',['lpdt_color_type_e',['../lpdt__codes_8h.html#a6fbb08f2cb267ff11dbfafc43fd57db6',1,'lpdt_codes.h']]],
+  ['lpdt_5fcolors_5fcode_5fe_69',['lpdt_colors_code_e',['../lpdt__codes_8h.html#a00ff07b6e5a76075b97a687d01030b6c',1,'lpdt_codes.h']]],
+  ['lpdt_5feffects_5fcode_5fe_70',['lpdt_effects_code_e',['../lpdt__codes_8h.html#a68b9f4f02d90c0f06313fac07e98ff80',1,'lpdt_codes.h']]],
+  ['lpdt_5freset_5fcode_5fe_71',['lpdt_reset_code_e',['../lpdt__codes_8h.html#a1f437b4788e2cbc1a6169823f7eee545',1,'lpdt_codes.h']]]
 ];

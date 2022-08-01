@@ -75,16 +75,21 @@ $(function() {
 <div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#pragma once</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#ifndef LPDT_STRING_H_</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#define LPDT_STRING_H_</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160; </div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">// STRING LPDT</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">/* typedef struct lpdt_dyed_string_s */</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">/* { */</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment">/*   char *data; */</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">/*   size_t size; */</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment">/*   lpdt_color_rgb_s color; */</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment">/* } dstring_t; */</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* LPDT_STRING_H_ */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="lpdt__text_8h.html">lpdt_text.h</a>&quot;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">// string for color</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno"><a class="line" href="structlpdt__dyed__string__s.html">    7</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="structlpdt__dyed__string__s.html">lpdt_dyed_string_s</a></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;{</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;  <span class="keywordtype">char</span> *data;</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;  <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> <span class="keywordtype">long</span> len_data;</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;  <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> r, g, b;</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;  <span class="keyword">enum</span> <a class="code" href="lpdt__codes_8h.html#a6fbb08f2cb267ff11dbfafc43fd57db6">lpdt_color_type_e</a> color_fg;</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;} <a class="code" href="structlpdt__dyed__string__s.html">lpdt_string_t</a>;</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* LPDT_STRING_H_ */</span><span class="preprocessor"></span></div>
+<div class="ttc" id="alpdt__codes_8h_html_a6fbb08f2cb267ff11dbfafc43fd57db6"><div class="ttname"><a href="lpdt__codes_8h.html#a6fbb08f2cb267ff11dbfafc43fd57db6">lpdt_color_type_e</a></div><div class="ttdeci">lpdt_color_type_e</div><div class="ttdoc">Text type enumeration.</div><div class="ttdef"><b>Definition:</b> lpdt_codes.h:65</div></div>
+<div class="ttc" id="alpdt__text_8h_html"><div class="ttname"><a href="lpdt__text_8h.html">lpdt_text.h</a></div><div class="ttdoc">This file contains api for working with text.</div></div>
+<div class="ttc" id="astructlpdt__dyed__string__s_html"><div class="ttname"><a href="structlpdt__dyed__string__s.html">lpdt_dyed_string_s</a></div><div class="ttdef"><b>Definition:</b> lpdt_string.h:8</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
