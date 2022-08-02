@@ -52,9 +52,17 @@ build CMakeFiles/pdt.dir/src/lpdt.c.o: C_COMPILER__pdt_ /home/nim/Prg/git_projec
   OBJECT_DIR = CMakeFiles/pdt.dir
   OBJECT_FILE_DIR = CMakeFiles/pdt.dir/src
 
-build CMakeFiles/pdt.dir/src/lpdt_color.c.o: C_COMPILER__pdt_ /home/nim/Prg/git_projects/libpdt/src/lpdt_color.c || cmake_object_order_depends_target_pdt
+build CMakeFiles/pdt.dir/src/lpdt_text.c.o: C_COMPILER__pdt_ /home/nim/Prg/git_projects/libpdt/src/lpdt_text.c || cmake_object_order_depends_target_pdt
   DEFINES = -Dpdt_EXPORTS
-  DEP_FILE = CMakeFiles/pdt.dir/src/lpdt_color.c.o.d
+  DEP_FILE = CMakeFiles/pdt.dir/src/lpdt_text.c.o.d
+  FLAGS = -fPIC -std=gnu17
+  INCLUDES = -I/home/nim/Prg/git_projects/libpdt/src
+  OBJECT_DIR = CMakeFiles/pdt.dir
+  OBJECT_FILE_DIR = CMakeFiles/pdt.dir/src
+
+build CMakeFiles/pdt.dir/src/lpdt_codes.c.o: C_COMPILER__pdt_ /home/nim/Prg/git_projects/libpdt/src/lpdt_codes.c || cmake_object_order_depends_target_pdt
+  DEFINES = -Dpdt_EXPORTS
+  DEP_FILE = CMakeFiles/pdt.dir/src/lpdt_codes.c.o.d
   FLAGS = -fPIC -std=gnu17
   INCLUDES = -I/home/nim/Prg/git_projects/libpdt/src
   OBJECT_DIR = CMakeFiles/pdt.dir
@@ -68,7 +76,7 @@ build CMakeFiles/pdt.dir/src/lpdt_color.c.o: C_COMPILER__pdt_ /home/nim/Prg/git_
 #############################################
 # Link the shared library libpdt.so
 
-build libpdt.so: C_SHARED_LIBRARY_LINKER__pdt_ CMakeFiles/pdt.dir/src/lpdt.c.o CMakeFiles/pdt.dir/src/lpdt_color.c.o
+build libpdt.so: C_SHARED_LIBRARY_LINKER__pdt_ CMakeFiles/pdt.dir/src/lpdt.c.o CMakeFiles/pdt.dir/src/lpdt_text.c.o CMakeFiles/pdt.dir/src/lpdt_codes.c.o
   OBJECT_DIR = CMakeFiles/pdt.dir
   POST_BUILD = :
   PRE_LINK = :
@@ -76,39 +84,6 @@ build libpdt.so: C_SHARED_LIBRARY_LINKER__pdt_ CMakeFiles/pdt.dir/src/lpdt.c.o C
   SONAME_FLAG = -Wl,-soname,
   TARGET_FILE = libpdt.so
   TARGET_PDB = pdt.so.dbg
-
-# =============================================================================
-# Object build statements for EXECUTABLE target lpdt_test_print
-
-
-#############################################
-# Order-only phony target for lpdt_test_print
-
-build cmake_object_order_depends_target_lpdt_test_print: phony || cmake_object_order_depends_target_pdt
-
-build CMakeFiles/lpdt_test_print.dir/test/test_print.c.o: C_COMPILER__lpdt_test_print_ /home/nim/Prg/git_projects/libpdt/test/test_print.c || cmake_object_order_depends_target_lpdt_test_print
-  DEP_FILE = CMakeFiles/lpdt_test_print.dir/test/test_print.c.o.d
-  FLAGS = -g -Werror -Wall -Wextra -Wpedantic -fPIC -march=native -std=gnu17
-  INCLUDES = -I/home/nim/Prg/git_projects/libpdt/src
-  OBJECT_DIR = CMakeFiles/lpdt_test_print.dir
-  OBJECT_FILE_DIR = CMakeFiles/lpdt_test_print.dir/test
-
-
-# =============================================================================
-# Link build statements for EXECUTABLE target lpdt_test_print
-
-
-#############################################
-# Link the executable lpdt_test_print
-
-build lpdt_test_print: C_EXECUTABLE_LINKER__lpdt_test_print_ CMakeFiles/lpdt_test_print.dir/test/test_print.c.o | libpdt.so || libpdt.so
-  LINK_FLAGS = -rdynamic
-  LINK_LIBRARIES = -Wl,-rpath,/home/nim/Prg/git_projects/libpdt/bin  libpdt.so
-  OBJECT_DIR = CMakeFiles/lpdt_test_print.dir
-  POST_BUILD = :
-  PRE_LINK = :
-  TARGET_FILE = lpdt_test_print
-  TARGET_PDB = lpdt_test_print.dbg
 
 
 #############################################
@@ -147,7 +122,7 @@ build pdt: phony libpdt.so
 #############################################
 # Folder: /home/nim/Prg/git_projects/libpdt/bin
 
-build all: phony libpdt.so lpdt_test_print
+build all: phony libpdt.so
 
 # =============================================================================
 # Unknown Build Time Dependencies.

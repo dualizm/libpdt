@@ -90,6 +90,25 @@ extern void lpdt_print_dyedln_rgb(char const* msg,
     struct lpdt_color_fgbg_rgb_s * color,
     enum lpdt_effects_code_e const effects); 
 
+
+#define LPDT_VERIFY_AND_PRINT_COLOR(PTR_COLOR, TYPE) \
+  if ( PTR_COLOR != NULL ) \
+  { \
+    fputs(lpdt_code_color(*PTR_COLOR, TYPE), stdout);\
+    free(PTR_COLOR); \
+  }
+
+#define LPDT_VERIFY_AND_PRINT_COLOR_RGB(PTR_COLOR, TYPE) \
+  if ( PTR_COLOR != NULL ) \
+  { \
+    struct lpdt_buffer_code_rgb_s * macro_buffer_rgb_code = lpdt_malloc_buffer_code_rgb(); \
+    lpdt_code_rgb(macro_buffer_rgb_code, PTR_COLOR->r, PTR_COLOR->g, PTR_COLOR->b, TYPE); \
+    fputs(macro_buffer_rgb_code->data, stdout); \
+    free(macro_buffer_rgb_code); \
+    free(PTR_COLOR); \
+  }
+
+
 /**
  *
  *

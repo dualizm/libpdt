@@ -6,12 +6,12 @@
 },
 {
   "directory": "/home/nim/Prg/git_projects/libpdt/bin",
-  "command": "/usr/lib/llvm/13/bin/clang -Dpdt_EXPORTS -I/home/nim/Prg/git_projects/libpdt/src -fPIC -std=gnu17 -o CMakeFiles/pdt.dir/src/lpdt_color.c.o -c /home/nim/Prg/git_projects/libpdt/src/lpdt_color.c",
-  "file": "/home/nim/Prg/git_projects/libpdt/src/lpdt_color.c"
+  "command": "/usr/lib/llvm/13/bin/clang -Dpdt_EXPORTS -I/home/nim/Prg/git_projects/libpdt/src -fPIC -std=gnu17 -o CMakeFiles/pdt.dir/src/lpdt_text.c.o -c /home/nim/Prg/git_projects/libpdt/src/lpdt_text.c",
+  "file": "/home/nim/Prg/git_projects/libpdt/src/lpdt_text.c"
 },
 {
   "directory": "/home/nim/Prg/git_projects/libpdt/bin",
-  "command": "/usr/lib/llvm/13/bin/clang -I/home/nim/Prg/git_projects/libpdt/src -g -Werror -Wall -Wextra -Wpedantic -fPIC -march=native -std=gnu17 -o CMakeFiles/lpdt_test_print.dir/test/test_print.c.o -c /home/nim/Prg/git_projects/libpdt/test/test_print.c",
-  "file": "/home/nim/Prg/git_projects/libpdt/test/test_print.c"
+  "command": "/usr/lib/llvm/13/bin/clang -Dpdt_EXPORTS -I/home/nim/Prg/git_projects/libpdt/src -fPIC -std=gnu17 -o CMakeFiles/pdt.dir/src/lpdt_codes.c.o -c /home/nim/Prg/git_projects/libpdt/src/lpdt_codes.c",
+  "file": "/home/nim/Prg/git_projects/libpdt/src/lpdt_codes.c"
 }
 ]

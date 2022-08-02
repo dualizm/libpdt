@@ -67,6 +67,19 @@ enum lpdt_color_type_e
   LPDT_BG = 0x02,
 };
 
+//! Buffer for code rgb
+#define LPDT_MAX_BUFFER_CODE_RGB_ 20
+struct lpdt_buffer_code_rgb_s
+{
+  char data[LPDT_MAX_BUFFER_CODE_RGB_];
+};
+
+/*!
+ *@brief Allocates memory for buffer with rgb code
+ *@return new buffer
+ */
+extern struct lpdt_buffer_code_rgb_s * lpdt_malloc_buffer_code_rgb(void);
+
 /*!
  * @brief get control characters for desired effect.
  * @param[in] effect effect name
@@ -98,8 +111,7 @@ extern char const* lpdt_code_color(enum lpdt_colors_code_e const color,
  * @param[in] type color type[fg,bg]
  * @return rgb color code
  */
-#define LPDT_MAX_BUFFER_CODE_RGB_ 20
-extern void lpdt_code_rgb(char destination[static LPDT_MAX_BUFFER_CODE_RGB_],
+extern void lpdt_code_rgb(struct lpdt_buffer_code_rgb_s *destination,
     unsigned char const r, unsigned char const g, unsigned char const b,
     enum lpdt_color_type_e const type);
 

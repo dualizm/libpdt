@@ -56,18 +56,18 @@ char const* lpdt_code_color(enum lpdt_colors_code_e const color,
   return code;
 }
 
-void lpdt_code_rgb(char destination[static LPDT_MAX_BUFFER_CODE_RGB_],
+void lpdt_code_rgb(struct lpdt_buffer_code_rgb_s * destination,
     unsigned char const r, unsigned char const g, unsigned char const b,
     enum lpdt_color_type_e const type)
 {
   if ( type == LPDT_FG)
   {
-    snprintf(destination, LPDT_MAX_BUFFER_CODE_RGB_,
+    snprintf(destination->data, LPDT_MAX_BUFFER_CODE_RGB_,
         "\033[38;2;%d;%d;%dm", r, g, b);
   }
   else if ( type == LPDT_BG)
   {
-    snprintf(destination, LPDT_MAX_BUFFER_CODE_RGB_,
+    snprintf(destination->data, LPDT_MAX_BUFFER_CODE_RGB_,
         "\033[48;2;%d;%d;%dm", r, g, b);
   }
 }
@@ -110,4 +110,11 @@ extern char const* lpdt_code_reset(enum lpdt_reset_code_e const reset_code)
   }
 
   return code_reset;
+}
+
+
+extern struct lpdt_buffer_code_rgb_s * lpdt_malloc_buffer_code_rgb(void)
+{
+  struct lpdt_buffer_code_rgb_s * new_buffer = malloc(sizeof * new_buffer);
+  return new_buffer;
 }

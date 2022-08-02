@@ -3,6 +3,7 @@
 #include <string.h>
 
 #include "lpdt.h"
+#include "lpdt_codes.h"
 
 void lpdt_print_dyed_colors(char const* msg,
     struct lpdt_color_fgbg_s * color,
@@ -11,16 +12,8 @@ void lpdt_print_dyed_colors(char const* msg,
   struct lpdt_buffer_effect_s *buffer_effect = lpdt_make_buffer_effect(effects);
 
   // Print color code
-  if ( color->fg != NULL)
-  {
-    fputs(lpdt_code_color(*color->fg, LPDT_FG), stdout);
-    free(color->fg);
-  }
-  if ( color->bg != NULL)
-  {
-    fputs(lpdt_code_color(*color->bg, LPDT_BG), stdout);
-    free(color->bg);
-  }
+  LPDT_VERIFY_AND_PRINT_COLOR(color->fg, LPDT_FG)
+  LPDT_VERIFY_AND_PRINT_COLOR(color->bg, LPDT_BG)
   free(color);
 
   // Print effect code
@@ -49,20 +42,8 @@ void lpdt_print_dyed_rgb(char const* msg,
   struct lpdt_buffer_effect_s *buffer_effect = lpdt_make_buffer_effect(effects);
 
   // Print rgb color code
-  if ( color->fg != NULL)
-  {
-    char rgb_buffer[LPDT_MAX_BUFFER_CODE_RGB_];
-    lpdt_code_rgb(rgb_buffer, color->fg->r, color->fg->g, color->fg->b, LPDT_FG);
-    fputs(rgb_buffer, stdout);
-    free(color->fg);
-  }
-  if ( color->bg != NULL)
-  {
-    char rgb_buffer[LPDT_MAX_BUFFER_CODE_RGB_];
-    lpdt_code_rgb(rgb_buffer, color->bg->r, color->bg->g, color->bg->b, LPDT_BG);
-    fputs(rgb_buffer, stdout);
-    free(color->bg);
-  }
+  LPDT_VERIFY_AND_PRINT_COLOR_RGB(color->fg, LPDT_FG);
+  LPDT_VERIFY_AND_PRINT_COLOR_RGB(color->bg, LPDT_BG);
   free(color);
 
   // Print effect code
