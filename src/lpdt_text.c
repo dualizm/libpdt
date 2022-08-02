@@ -1,39 +1,23 @@
 #include <stdlib.h>
 #include <string.h>
 
+#include "lpdt_codes.h"
 #include "lpdt_text.h"
 
-struct lpdt_color_fgbg_s* lpdt_make_color_fgbg_base(enum lpdt_colors_code_e const* color_fg,
-    enum lpdt_colors_code_e const* color_bg)
+struct lpdt_color_fgbg_s* lpdt_make_color_fgbg_base(enum lpdt_colors_code_e const color_fg,
+    enum lpdt_colors_code_e const color_bg)
 {
   struct lpdt_color_fgbg_s * new_param = malloc(sizeof(*new_param));
-  if ( color_fg != NULL)
-  {
-    new_param->fg = malloc(sizeof(*(new_param->fg)));
-    *new_param->fg = *color_fg;
-  }
-  else
-  {
-    new_param->fg = NULL;
-  }
-
-  if ( color_bg != NULL)
-  {
-    new_param->bg = malloc(sizeof(*(new_param->bg)));
-    *new_param->bg = *color_bg;
-  }
-  else
-  {
-    new_param->bg = NULL;
-  }
+  new_param->fg = color_fg;
+  new_param->bg = color_bg;
 
   return new_param;
 }
 
 struct lpdt_color_fgbg_s* lpdt_make_color_fgbg_wrap(struct lpdt_make_color_fgbg_args args)
 {
-  enum lpdt_colors_code_e const* color_fg = args.color_fg ? &args.color_fg : NULL;
-  enum lpdt_colors_code_e const* color_bg = args.color_bg ? &args.color_bg : NULL;
+  enum lpdt_colors_code_e const color_fg = args.color_fg ? args.color_fg : LPDT_NOT_USE_THAT_COLOR_NONE;
+  enum lpdt_colors_code_e const color_bg = args.color_bg ? args.color_bg : LPDT_NOT_USE_THAT_COLOR_NONE;
   return lpdt_make_color_fgbg_base(color_fg, color_bg);
 }
 

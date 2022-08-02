@@ -27,6 +27,7 @@ char const* lpdt_code_color(enum lpdt_colors_code_e const color,
       case LPDT_COLOR_BRIGHT_MAGENTA: code = "\033[0;95m"  ; break;
       case LPDT_COLOR_BRIGHT_CYAN:    code = "\033[0;96m"  ; break;
       case LPDT_COLOR_BRIGHT_WHITE:   code = "\033[0;97m"  ; break;
+      case LPDT_NOT_USE_THAT_COLOR_NONE:          code = ""; break;
     }
   }
   else if ( type == LPDT_BG)
@@ -50,6 +51,7 @@ char const* lpdt_code_color(enum lpdt_colors_code_e const color,
       case LPDT_COLOR_BRIGHT_MAGENTA: code = "\033[0;105m" ; break;
       case LPDT_COLOR_BRIGHT_CYAN:    code = "\033[0;106m" ; break;
       case LPDT_COLOR_BRIGHT_WHITE:   code = "\033[0;107m" ; break;
+      case LPDT_NOT_USE_THAT_COLOR_NONE:          code = ""; break;
     }
   }
 

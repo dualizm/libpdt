@@ -17,6 +17,15 @@
 
 
 /*!
+ * The function produces output according to the format as described below.
+ * %lc - LPDT_COLOR_...
+ * %le - LPDT_EFFECT...
+ * %lr - LPDT_RESET_...
+ *
+ */
+extern int lpdt_printf(char const* restrict format, ...);
+
+/*!
  * The function to print text to the console with 
  * certain color without line break
  *
@@ -91,11 +100,11 @@ extern void lpdt_print_dyedln_rgb(char const* msg,
     enum lpdt_effects_code_e const effects); 
 
 
+
 #define LPDT_VERIFY_AND_PRINT_COLOR(PTR_COLOR, TYPE) \
-  if ( PTR_COLOR != NULL ) \
+  if ( PTR_COLOR != LPDT_NOT_USE_THAT_COLOR_NONE) \
   { \
-    fputs(lpdt_code_color(*PTR_COLOR, TYPE), stdout);\
-    free(PTR_COLOR); \
+    fputs(lpdt_code_color(PTR_COLOR, TYPE), stdout);\
   }
 
 #define LPDT_VERIFY_AND_PRINT_COLOR_RGB(PTR_COLOR, TYPE) \

@@ -30,8 +30,8 @@ struct lpdt_color_rgb_bg_s
 //! Color param
 struct lpdt_color_fgbg_s
 {
-  enum lpdt_colors_code_e * fg;
-  enum lpdt_colors_code_e * bg;
+  enum lpdt_colors_code_e fg;
+  enum lpdt_colors_code_e bg;
 };
 
 //! Rgb color param
@@ -80,8 +80,8 @@ extern struct lpdt_buffer_effect_s * lpdt_make_buffer_effect(enum lpdt_effects_c
  *@param[in] color_fg foreground color text
  *@param[in] color_bg background color text
  */
-extern struct lpdt_color_fgbg_s* lpdt_make_color_fgbg_base(enum lpdt_colors_code_e const* color_fg,
-    enum lpdt_colors_code_e const* color_bg);
+extern struct lpdt_color_fgbg_s* lpdt_make_color_fgbg_base(enum lpdt_colors_code_e const color_fg,
+    enum lpdt_colors_code_e const color_bg);
 
 /*!
  *@brief function wrapper
