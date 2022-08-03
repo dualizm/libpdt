@@ -36,7 +36,7 @@ include CMakeFiles/rules.ninja
 
 cmake_ninja_workdir = /home/nim/Prg/git_projects/libpdt/bin/
 # =============================================================================
-# Object build statements for SHARED_LIBRARY target pdt
+# Object build statements for STATIC_LIBRARY target pdt
 
 
 #############################################
@@ -45,45 +45,40 @@ cmake_ninja_workdir = /home/nim/Prg/git_projects/libpdt/bin/
 build cmake_object_order_depends_target_pdt: phony || CMakeFiles/pdt.dir
 
 build CMakeFiles/pdt.dir/src/lpdt.c.o: C_COMPILER__pdt_ /home/nim/Prg/git_projects/libpdt/src/lpdt.c || cmake_object_order_depends_target_pdt
-  DEFINES = -Dpdt_EXPORTS
   DEP_FILE = CMakeFiles/pdt.dir/src/lpdt.c.o.d
-  FLAGS = -fPIC -std=gnu17
+  FLAGS = -std=gnu17
   INCLUDES = -I/home/nim/Prg/git_projects/libpdt/src
   OBJECT_DIR = CMakeFiles/pdt.dir
   OBJECT_FILE_DIR = CMakeFiles/pdt.dir/src
 
 build CMakeFiles/pdt.dir/src/lpdt_text.c.o: C_COMPILER__pdt_ /home/nim/Prg/git_projects/libpdt/src/lpdt_text.c || cmake_object_order_depends_target_pdt
-  DEFINES = -Dpdt_EXPORTS
   DEP_FILE = CMakeFiles/pdt.dir/src/lpdt_text.c.o.d
-  FLAGS = -fPIC -std=gnu17
+  FLAGS = -std=gnu17
   INCLUDES = -I/home/nim/Prg/git_projects/libpdt/src
   OBJECT_DIR = CMakeFiles/pdt.dir
   OBJECT_FILE_DIR = CMakeFiles/pdt.dir/src
 
 build CMakeFiles/pdt.dir/src/lpdt_codes.c.o: C_COMPILER__pdt_ /home/nim/Prg/git_projects/libpdt/src/lpdt_codes.c || cmake_object_order_depends_target_pdt
-  DEFINES = -Dpdt_EXPORTS
   DEP_FILE = CMakeFiles/pdt.dir/src/lpdt_codes.c.o.d
-  FLAGS = -fPIC -std=gnu17
+  FLAGS = -std=gnu17
   INCLUDES = -I/home/nim/Prg/git_projects/libpdt/src
   OBJECT_DIR = CMakeFiles/pdt.dir
   OBJECT_FILE_DIR = CMakeFiles/pdt.dir/src
 
 
 # =============================================================================
-# Link build statements for SHARED_LIBRARY target pdt
+# Link build statements for STATIC_LIBRARY target pdt
 
 
 #############################################
-# Link the shared library libpdt.so
+# Link the static library libpdt.a
 
-build libpdt.so: C_SHARED_LIBRARY_LINKER__pdt_ CMakeFiles/pdt.dir/src/lpdt.c.o CMakeFiles/pdt.dir/src/lpdt_text.c.o CMakeFiles/pdt.dir/src/lpdt_codes.c.o
+build libpdt.a: C_STATIC_LIBRARY_LINKER__pdt_ CMakeFiles/pdt.dir/src/lpdt.c.o CMakeFiles/pdt.dir/src/lpdt_text.c.o CMakeFiles/pdt.dir/src/lpdt_codes.c.o
   OBJECT_DIR = CMakeFiles/pdt.dir
   POST_BUILD = :
   PRE_LINK = :
-  SONAME = libpdt.so
-  SONAME_FLAG = -Wl,-soname,
-  TARGET_FILE = libpdt.so
-  TARGET_PDB = pdt.so.dbg
+  TARGET_FILE = libpdt.a
+  TARGET_PDB = pdt.a.dbg
 
 
 #############################################
@@ -112,7 +107,7 @@ build rebuild_cache: phony CMakeFiles/rebuild_cache.util
 # =============================================================================
 # Target aliases.
 
-build pdt: phony libpdt.so
+build pdt: phony libpdt.a
 
 # =============================================================================
 # Folder targets.
@@ -122,7 +117,7 @@ build pdt: phony libpdt.so
 #############################################
 # Folder: /home/nim/Prg/git_projects/libpdt/bin
 
-build all: phony libpdt.so
+build all: phony libpdt.a
 
 # =============================================================================
 # Unknown Build Time Dependencies.

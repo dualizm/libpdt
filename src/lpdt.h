@@ -2,6 +2,8 @@
 #ifndef LPDT_H_
 #define LPDT_H_
 #include "lpdt_text.h"
+#include <stdarg.h>
+#include <stdnoreturn.h>
 
 /*!
 |+------------------------------------------------------------------------+|*
@@ -18,11 +20,11 @@
 
 /*!
  * The function produces output according to the format as described below.
- * %lc - LPDT_COLOR_...
- * %le - LPDT_EFFECT...
- * %lr - LPDT_RESET_...
+ * %lC - LPDT_COLOR_...
+ * %lE - LPDT_EFFECT...
  *
  */
+noreturn 
 extern int lpdt_printf(char const* restrict format, ...);
 
 /*!
@@ -100,30 +102,34 @@ extern void lpdt_print_dyedln_rgb(char const* msg,
     enum lpdt_effects_code_e const effects); 
 
 
-
-#define LPDT_VERIFY_AND_PRINT_COLOR(PTR_COLOR, TYPE) \
-  if ( PTR_COLOR != LPDT_NOT_USE_THAT_COLOR_NONE) \
-  { \
-    fputs(lpdt_code_color(PTR_COLOR, TYPE), stdout);\
-  }
-
-#define LPDT_VERIFY_AND_PRINT_COLOR_RGB(PTR_COLOR, TYPE) \
-  if ( PTR_COLOR != NULL ) \
-  { \
-    struct lpdt_buffer_code_rgb_s * macro_buffer_rgb_code = lpdt_malloc_buffer_code_rgb(); \
-    lpdt_code_rgb(macro_buffer_rgb_code, PTR_COLOR->r, PTR_COLOR->g, PTR_COLOR->b, TYPE); \
-    fputs(macro_buffer_rgb_code->data, stdout); \
-    free(macro_buffer_rgb_code); \
-    free(PTR_COLOR); \
-  }
-
-
-/**
- *
- *
+/*!
+ * @brief Function prints colored text
+ * @param[in] msg printabel text
+ * @param[in] color color text 
  */
-/* extern void colorstr(char *str, colors_t color, const char *msg); */
+extern void lpdt_printcl(char const* msg,
+    struct lpdt_color_fgbg_s * color);
 
-/* extern void get_colorstrch(char *str, colors_t color, const char ch); */
+/*!
+ * @brief Function prints colored rgb text
+ * @param[in] msg printabel text
+ * @param[in] color color text
+ */
+extern void lpdt_printcl_rgb(char const* msg,
+    struct lpdt_color_fgbg_rgb_s * color);
+
+/*!
+ * @brief Function prints text with effects
+ * @param[in] msg printabel text
+ * @param[in] effects text effects LPDT_EFFECT_...
+ */
+extern void lpdt_printef(char const* msg,
+    enum lpdt_effects_code_e const effects);
+
+static inline void lpdt_verify_and_print_code_color_(enum lpdt_colors_code_e const color,
+    enum lpdt_color_type_e const type);
+
+static inline void lpdt_verify_and_print_code_color_rgb_(void * color,
+    enum lpdt_color_type_e const type);
 
 #endif /* LPDT_H_ */
