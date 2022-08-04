@@ -5,17 +5,6 @@
 
 #include "lpdt.h"
 
-#define LPDT_PRINT_TEXT_(MSG) \
-  fputs(MSG, stdout)
-
-#define LPDT_PRINT_END_CODE_ \
-  fputs(lpdt_code_end(), stdout)
-
-#define LPDT_PRINT_EFFECTS_CODE_(EFFECTS) \
-  struct lpdt_buffer_effect_s * macro_buffer_effects = lpdt_make_buffer_effect(effects); \
-  fputs(macro_buffer_effects->data, stdout); \
-  free(macro_buffer_effects)
-
 static inline void lpdt_verify_and_print_code_color_(enum lpdt_colors_code_e const color,
     enum lpdt_color_type_e const type)
 {
@@ -44,25 +33,25 @@ static inline void lpdt_verify_and_print_code_color_rgb_(void * color,
   free(buffer_rgb_code);
 }
 
-#define LPDT_PRINT_COLOR_CODE_(COLOR_PTR) \
-  lpdt_verify_and_print_color_(COLOR_PTR->fg, LPDT_FG), \
-  lpdt_verify_and_print_color_(LPDT_VERIFY_AND_PRINT_COLOR(COLOR_PTR->bg, LPDT_BG), \
-  free(COLOR_PTR)
+static inline void lpdt_print_color_code_(struct lpdt_color_fgbg_s * color)
+{
+  lpdt_verify_and_print_code_color_(color->fg, LPDT_FG);
+  lpdt_verify_and_print_code_color_(color->bg, LPDT_BG);
+  free(color);
+}
 
-#define LPDT_PRINT_COLOR_RGB_CODE_(COLOR_RGB_PTR) \
-  lpdt_verify_and_print_color_rgb_(COLOR_RGB_PTR->fg, LPDT_FG) \
-  lpdt_verify_and_print_color_rgb_(COLOR_RGB_PTR->bg, LPDT_BG) \
-  free(COLOR_RGB_PTR)
-
-#define LPDT_PRINT_COLOR_(COLOR) _Generic((COLOR), \
-    struct lpdt_color_fgbg_s * : LPDT_PRINT_COLOR_CODE_(COLOR), \
-    struct lpdt_color_fgbg_rgb_s * : LPDT_PRINT_COLOR_RGB_CODE_(COLOR))
+static inline void lpdt_print_color_rgb_code_(struct lpdt_color_fgbg_rgb_s * color)
+{
+  lpdt_verify_and_print_code_color_rgb_(color->fg, LPDT_FG);
+  lpdt_verify_and_print_code_color_rgb_(color->bg, LPDT_BG);
+  free(color);
+}
 
 extern void lpdt_printcl(char const* msg,
     struct lpdt_color_fgbg_s * color)
 {
   // Print text with color code
-  LPDT_PRINT_COLOR(color);
+  LPDT_PRINT_COLOR_(color);
   //Print text
   LPDT_PRINT_TEXT_(msg);
   // Print end code
@@ -73,7 +62,7 @@ extern void lpdt_printcl_rgb(char const* msg,
     struct lpdt_color_fgbg_rgb_s * color)
 {
   //Print color rgb code
-  LPDT_PRINT_COLOR(color);
+  LPDT_PRINT_COLOR_(color);
   // Print text
   LPDT_PRINT_TEXT_(msg);
   // Print end code
@@ -96,7 +85,7 @@ void lpdt_print_dyed_colors(char const* msg,
     enum lpdt_effects_code_e const effects)
 {
   // Print color
-  LPDT_PRINT_COLOR(color);
+  LPDT_PRINT_COLOR_(color);
 
   // Print effect code
   LPDT_PRINT_EFFECTS_CODE_(effects);
@@ -120,7 +109,7 @@ void lpdt_print_dyed_rgb(char const* msg,
     enum lpdt_effects_code_e const effects)
 {
   // Print rgb color code
-  LPDT_PRINT_COLOR(color);
+  LPDT_PRINT_COLOR_(color);
 
   // Print effect code
   LPDT_PRINT_EFFECTS_CODE_(effects);

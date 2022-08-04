@@ -1,9 +1,9 @@
 # ninja log v5
-1	74	1659440407153470230	CMakeFiles/lpdt_test_print.dir/test_print.c.o	4c985c7b34548774
-0	105	1659440407186803565	CMakeFiles/lpdt_test_print.dir/home/nim/Prg/git_projects/libpdt/src/lpdt.c.o	8b7fa6b56c8d1cfa
+0	56	1659646329544326319	CMakeFiles/lpdt_test_print.dir/test_print.c.o	9887ba59c982f867
+0	70	1659646329557659652	CMakeFiles/lpdt_test_print.dir/home/nim/Prg/git_projects/libpdt/src/lpdt.c.o	b96da929d7ca3d28
 2	193	1659263591404727808	CMakeFiles/lpdt_test_print.dir/home/nim/Prg/git_projects/libpdt/src/lpdt_color.c.o	bb81480b2706f3b4
-71	124	1659405856760410124	lpdt_test_print	28018ed1ceb2e357
-0	94	1659440407173470231	CMakeFiles/lpdt_test_print.dir/home/nim/Prg/git_projects/libpdt/src/lpdt_text.c.o	73b0d44d1c002ea0
-1	156	1659404827470358451	CMakeFiles/lpdt_test_print.dir/home/nim/Prg/git_projects/libpdt/src/lpdt_codes.c.o	b30426efdbd65549
-0	62	1659441087006837540	CMakeFiles/lpdt_test_print.dir/home/nim/Prg/git_projects/libpdt/src/lpdt_codes.c.o	b30426efdbd65549
-62	186	1659441087133504212	lpdt_test_print	28018ed1ceb2e357
+70	129	1659646329617659656	lpdt_test_print	28018ed1ceb2e357
+0	105	1659558070407831437	CMakeFiles/lpdt_test_print.dir/home/nim/Prg/git_projects/libpdt/src/lpdt_text.c.o	f28c10653ad5d24c
+1	127	1659558070434498104	CMakeFiles/lpdt_test_print.dir/home/nim/Prg/git_projects/libpdt/src/lpdt_codes.c.o	cf6605d3870b2757
+0	48	1659646356787661020	CMakeFiles/lpdt_test_print.dir/test_print.c.o	9887ba59c982f867
+48	100	1659646356840994356	lpdt_test_print	28018ed1ceb2e357

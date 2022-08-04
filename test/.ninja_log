@@ -1,0 +1,5 @@
+# ninja log v5
+0	65	1659558032901162887	CMakeFiles/pdt.dir/src/lpdt_text.c.o	d3a16100c8eb3c3b
+1	79	1659558032914496221	CMakeFiles/pdt.dir/src/lpdt_codes.c.o	a0b595919a883a2f
+0	79	1659558032914496221	CMakeFiles/pdt.dir/src/lpdt.c.o	55aeb7cbc9d1e45d
+79	119	1659558032941162889	libpdt.a	21ff742ae4f1dcbd

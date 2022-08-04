@@ -126,8 +126,28 @@ extern void lpdt_printcl_rgb(char const* msg,
 extern void lpdt_printef(char const* msg,
     enum lpdt_effects_code_e const effects);
 
+#define LPDT_PRINT_COLOR_(COLOR) _Generic((COLOR), \
+    struct lpdt_color_fgbg_s * : lpdt_print_color_code_, \
+    struct lpdt_color_fgbg_rgb_s * : lpdt_print_color_rgb_code_) \
+    (COLOR)
+
+#define LPDT_PRINT_TEXT_(MSG) \
+  fputs(MSG, stdout)
+
+#define LPDT_PRINT_END_CODE_ \
+  fputs(lpdt_code_end(), stdout)
+
+#define LPDT_PRINT_EFFECTS_CODE_(EFFECTS) \
+  struct lpdt_buffer_effect_s * macro_buffer_effects = lpdt_make_buffer_effect(effects); \
+  fputs(macro_buffer_effects->data, stdout); \
+  free(macro_buffer_effects)
+
 static inline void lpdt_verify_and_print_code_color_(enum lpdt_colors_code_e const color,
     enum lpdt_color_type_e const type);
+
+static inline void lpdt_print_color_code_(struct lpdt_color_fgbg_s * color);
+
+static inline void lpdt_print_color_rgb_code_(struct lpdt_color_fgbg_rgb_s * color);
 
 static inline void lpdt_verify_and_print_code_color_rgb_(void * color,
     enum lpdt_color_type_e const type);
