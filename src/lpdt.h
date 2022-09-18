@@ -126,6 +126,9 @@ extern void lpdt_printcl_rgb(char const* msg,
 extern void lpdt_printef(char const* msg,
     enum lpdt_effects_code_e const effects);
 
+extern void lpdt_printre(char const* msg,
+    enum lpdt_reset_code_e const reset);
+
 #define LPDT_PRINT_COLOR_(COLOR) _Generic((COLOR), \
     struct lpdt_color_fgbg_s * : lpdt_print_color_code_, \
     struct lpdt_color_fgbg_rgb_s * : lpdt_print_color_rgb_code_) \

@@ -3,7 +3,7 @@ set(CMAKE_C_COMPILER clang)
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 set(CMAKE_C_STANDARD 17)
 
-set(COMPILER_OPT_TEST -g -Werror -Wall -Wextra -Wpedantic -march=native  )
+# set(COMPILER_OPT_TEST -g -Werror -Wall -Wextra -Wpedantic -march=native  )
 
 project(lpdt
         VERSION 1.0
@@ -17,4 +17,4 @@ set(LPDT_SOURCE
   src/lpdt_codes.c
 )
 
-add_library(pdt STATIC ${LPDT_SOURCE})
+add_library(pdt SHARED ${LPDT_SOURCE})

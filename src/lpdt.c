@@ -69,6 +69,11 @@ extern void lpdt_printcl_rgb(char const* msg,
   LPDT_PRINT_END_CODE_;
 }
 
+extern void lpdt_printre(char const* msg,
+    enum lpdt_reset_code_e const reset)
+{
+}
+
 extern void lpdt_printef(char const* msg,
     enum lpdt_effects_code_e const effects)
 {
